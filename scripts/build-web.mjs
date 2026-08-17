@@ -5,6 +5,12 @@ import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const personas = JSON.parse(readFileSync(join(root, "web/personas.json"), "utf8"));
+const ROLES = JSON.parse(readFileSync(join(root, "scripts/lib/roles.json"), "utf8"));
+
+function roleOf(id, fallback) {
+  if (!ROLES[id]) throw new Error(`missing role title for ${id}`);
+  return ROLES[id] || fallback;
+}
 const web = join(root, "web");
 
 const LABELS = {
@@ -76,15 +82,17 @@ const chips = [
 ].join("");
 
 const cards = personas
+  .slice()
+  .sort((a, b) => roleOf(a.id).localeCompare(roleOf(b.id)))
   .map((p) => {
-    const hay = [p.id, p.name, p.subcategory, p.short_description, p.description, ...(p.tags || [])]
+    const role = roleOf(p.id, p.name);
+    const hay = [p.id, p.name, role, p.subcategory, p.short_description, p.description, ...(p.tags || [])]
       .join(" ")
       .toLowerCase();
     return `<article class="card" data-cat="${esc(p.category)}" data-hay="${esc(hay)}">
           <a href="p/${esc(p.id)}.html">
-            <span class="cat">${esc(LABELS[p.category] || p.category)}</span>
-            <h2>${esc(p.name)}</h2>
-            <p class="blurb">${esc(p.short_description)}</p>
+            <h2>${esc(role)}</h2>
+            <p class="who-name">${esc(p.name)}</p>
           </a>
           <div class="card-actions">
             <button type="button" class="copy" data-copy="${esc(p.id)}">Copy prompt</button>
@@ -148,7 +156,7 @@ const indexBody = `<main class="wrap">
         <p class="lede">Seventy-six working voices. Sixteen of them are a company: sales, cash, hiring, support, delivery. Open a name. Copy the system prompt. Paste it into Grok. You do not install anything.</p>
       </section>
       <div class="toolbar">
-        <input class="search" id="q" type="search" placeholder="Search Ada, outage, poem, review" />
+        <input class="search" id="q" type="search" placeholder="Search cash, hiring, review, poem" />
         <div class="chips" id="chips">${chips}</div>
       </div>
       <p class="count" id="count">${personas.length} personas</p>
@@ -232,8 +240,8 @@ for (const persona of personas) {
 
   const body = `<main class="wrap">
       <a class="back" href="../index.html">Catalog</a>
-      <p class="kicker">${esc(LABELS[persona.category] || persona.category)} / ${esc(persona.subcategory)}</p>
-      <h1 class="name">${esc(persona.name)}</h1>
+      <p class="kicker">${esc(persona.name)} / ${esc(LABELS[persona.category] || persona.category)}</p>
+      <h1 class="name">${esc(roleOf(persona.id, persona.name))}</h1>
       <p class="desc">${esc(persona.description)}</p>
       <div class="actions">
         <button class="btn" type="button" id="copy-prompt" onclick="copyPrompt()">Copy system prompt</button>
@@ -272,13 +280,14 @@ for (const persona of personas) {
 
 const deskPeople = personas.filter((p) => p.category === "business");
 const deskRows = deskPeople
+  .slice()
+  .sort((a, b) => roleOf(a.id).localeCompare(roleOf(b.id)))
   .map(
     (p) =>
       `<article class="card">
           <a href="p/${esc(p.id)}.html">
-            <span class="cat">${esc(p.subcategory.replace(/-/g, " "))}</span>
-            <h2>${esc(p.name)}</h2>
-            <p class="blurb">${esc(p.short_description)}</p>
+            <h2>${esc(roleOf(p.id, p.name))}</h2>
+            <p class="who-name">${esc(p.name)}</p>
           </a>
           <div class="card-actions">
             <button type="button" class="copy" data-copy="${esc(p.id)}">Copy prompt</button>
