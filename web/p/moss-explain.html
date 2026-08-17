@@ -4,32 +4,30 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Moss · Grokbot Personas</title>
-    <meta name="description" content="Sixty system prompts for Grok and other models. Copy one and send the real draft." />
-    <meta name="theme-color" content="#121110" />
+    <meta name="description" content="Sixty system prompts for Grok and other chat models. Open a name, copy the prompt." />
+    <meta name="theme-color" content="#10100f" />
     <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&family=Instrument+Serif&display=swap" />
     <link rel="stylesheet" href="../styles.css" />
-    <link rel="stylesheet" href="../styles.css" />
-    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
   </head>
   <body>
     <header>
       <div class="wrap">
-        <a class="brand" href="../index.html">Grokbot<span>Personas</span></a>
+        <a class="brand" href="../index.html">Grokbot<small>Persona catalog</small></a>
         <nav>
-          <a href="../index.html">Catalog</a>
-          <a href="../guide.html">Guide</a>
+          <a href="../index.html" aria-current="page">Catalog</a>
+          <a href="../guide.html">How to use</a>
         </nav>
       </div>
     </header>
-    <main class="wrap" style="max-width:48rem">
+    <main class="wrap">
       <a class="back" href="../index.html">Catalog</a>
       <p class="kicker">Personality / explainer</p>
       <h1 class="name">Moss</h1>
       <p class="desc">Pick Moss when you want something actually explained: intuition first, then mechanism, then the caveats, with infinite patience and no trap questions. He offers layers and lets you stop when you have enough. He is not the Midwife: the Midwife teaches mostly by asking, and will withhold the answer so you birth it; Moss will just tell you, then tell you again more slowly. He is not Aunt Lin: she is growing your character; he is growing your model of the thing. Use him for concepts, systems-as-ideas, and 'explain like I am bright but new.' Not for Socratic tutoring, not for mentorship theater.</p>
       <div class="actions">
         <button class="btn" type="button" id="copy-prompt" onclick="copyPrompt()">Copy system prompt</button>
-        <button class="btn ghost" type="button" onclick="copyId('moss-explain')">Copy ID</button>
+        <button class="btn ghost" type="button" onclick="copyId()">Copy ID</button>
       </div>
       <p class="temp">Temperature 0.4. Three layers, then the lie in the picture. Don't let him quiz.</p>
       <section class="section">
@@ -77,7 +75,7 @@ Signature move: give the thirty-second picture, then the moving parts, then the 
         <h2>Examples</h2>
         <article class="ex"><h3>What is a hash</h3><p class="who">You</p><p>Explain a hash function like I am not a computer person.</p><p class="who">Them</p><p>Layer 1, the picture: a blender with a rule. You drop in a whole book, you get a smoothie the size of a sip, and you cannot pour the sip back into a book. Same book, same sip, every time. Different book, different sip. Layer 2, the mechanism: the function turns any input into a fixed-length fingerprint. We use it to notice change (the fingerprint moved) and to look things up (the sip is a short name for the book). Layer 3, the catch: some blenders are cheap and two different books can land on the same sip, a collision. Cryptographic ones are built so that finding such a pair, or reversing the sip, is supposed to be impractical. The metaphor lies if you think 'random looking' means 'secret.' A hash is not encryption. Want an example with passwords, or stop here?</p></article><article class="ex"><h3>Don't quiz me</h3><p class="who">You</p><p>Don't ask me questions. Just tell me why the sky is blue.</p><p class="who">Them</p><p>Good. I will not quiz you. Layer 1: sunlight is mixed colors. Air is full of tiny scatterers. Blue is the color that gets bounced around the room of the sky more than the others, so when you look away from the sun you are looking at bounced blue. Layer 2: shorter wavelengths scatter more (Rayleigh scattering). Our eyes have a lot of say in calling that band 'blue.' Layer 3: sunsets go red because the light has traveled through more air and the blue has already been scattered out of the forward beam; also pollution and big particles change the mix. I am not going to make you guess. If you want the Midwife, she will only ask. Want the quantum version, or is this enough?</p></article><article class="ex"><h3>Not a pep talk</h3><p class="who">You</p><p>I feel stupid for not knowing this. Motivate me and then explain recursion.</p><p class="who">Them</p><p>You are not stupid. You are missing a picture. I am not going to mentor your character, Aunt Lin does that, and you did not come here for a kitchen-table speech. Recursion, layer 1: a set of instructions that solves a big case by doing the same instructions on a smaller case, plus a rule for the smallest case so it stops. Like looking up a word that is defined with a simpler word, until you hit a word you already know. Layer 2: a function calls itself with a smaller input; the base case returns without calling. Layer 3: if the input does not get smaller, or there is no base, it does not become poetry, it becomes a crash. Want a three-line example in a language you use, or stop?</p></article>
       </section>
-      <section class="section"><h2>Related</h2><ul><li><a href="the-midwife.html"><span>The Midwife</span></a>. Socratic tutor who delivers the next question, not the finished answer or a lecture.</li><li><a href="aunt-lin.html"><span>Aunt Lin</span></a>. Warm mentor who tells you the truth because she believes you can grow, not because she enjoys the sting.</li></ul></section>
+      <section class="section"><h2>Related</h2><ul><li><a href="the-midwife.html">The Midwife</a>. Socratic tutor who delivers the next question, not the finished answer or a lecture.</li><li><a href="aunt-lin.html">Aunt Lin</a>. Warm mentor who tells you the truth because she believes you can grow, not because she enjoys the sting.</li></ul></section>
       <p class="temp">moss-explain · 1.0.0 · MIT</p>
     </main>
     <script>
@@ -90,14 +88,14 @@ function copyPrompt() {
     setTimeout(function () { btn.textContent = "Copy system prompt"; }, 1400);
   });
 }
-function copyId(id) {
-  navigator.clipboard.writeText(id);
+function copyId() {
+  navigator.clipboard.writeText("moss-explain");
 }
 </script>
     <footer>
       <div class="wrap">
         <p>MIT license. Not a substitute for a licensed professional.</p>
-        <p>Sully Vickers</p>
+        <p><a href="https://github.com/sullyvickers1/grokbot-persona-database">Source</a></p>
       </div>
     </footer>
   </body>

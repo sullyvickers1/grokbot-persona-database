@@ -1,6 +1,10 @@
 # Contributing
 
-This collection stays useful only if it stays **strict**. We would rather reject a charming prompt than let a near-duplicate in.
+Users of the catalog never clone this repository. They open GitHub Pages:
+
+https://sullyvickers1.github.io/grokbot-persona-database/
+
+This file is for people adding or revising a persona.
 
 Read this before you open a PR. Maintainers will close incomplete submissions without a debate.
 

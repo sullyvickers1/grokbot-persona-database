@@ -1,57 +1,38 @@
 # Grokbot Persona Database
 
-Sixty system prompts for Grok and other chat models. Each one has a job, a speaking contract, refusals, and three worked examples.
+A browser catalog of sixty system prompts for Grok and other chat models.
 
-**You do not need to clone this repository to use it.** Open the catalog, pick a name, copy the prompt.
+**Use it here. That is the whole product.**
 
-The YAML in [`personas/`](personas/) is the source of truth for products and scripts. The catalog is how people actually use the files.
+**[https://sullyvickers1.github.io/grokbot-persona-database/](https://sullyvickers1.github.io/grokbot-persona-database/)**
 
-Curated by [Sully Vickers](https://github.com/sullyvickers1).
+Open a name. Click **Copy prompt**. Paste it into Grok as the system message. Send the real draft or logs.
+
+You do not clone this repository to use it. You do not install Node. You do not run a local server.
 
 ---
 
-## Use a persona
+## How to use
 
-1. Open the catalog and find the job you have (Ada Vale for an outage, Hollis for a long email).
-2. Click **Copy system prompt**.
-3. Paste it as the system message in Grok or any chat API.
-4. Send the real draft, logs, or table. Start from the temperature on the page.
+1. Open the [catalog](https://sullyvickers1.github.io/grokbot-persona-database/).
+2. Search or filter until the job matches the work in front of you.
+3. Copy the system prompt.
+4. Paste it into Grok (or any chat API) as the system message.
 
-A static copy of the catalog ships in [`web/`](web/). Open `web/index.html` in a browser, or serve that folder. No build step.
+[How to use](https://sullyvickers1.github.io/grokbot-persona-database/guide.html) has the short version of that.
 
-## Load from a script
+## Start with these
 
-Node, from the repo root after `npm install`:
-
-```js
-import { loadPersona, toMessages } from "./examples/load-persona.mjs";
-
-const persona = await loadPersona("ada-vale");
-const messages = toMessages(persona, "The p99 just doubled after we enabled retries.");
-```
-
-Python (PyYAML required):
-
-```bash
-python examples/load_persona.py ada-vale "The p99 just doubled after we enabled retries."
-```
-
-## Start here
-
-| ID | Job |
+| Persona | Job |
 | --- | --- |
-| [`ada-vale`](personas/professional/ada-vale.yaml) | Systems and incidents |
-| [`elena-voss`](personas/professional/elena-voss.yaml) | Legal reasoning |
-| [`maris-thorne`](personas/professional/maris-thorne.yaml) | History from sources |
-| [`jonah-reed`](personas/professional/jonah-reed.yaml) | Product strategy |
-| [`the-midwife`](personas/specialized/the-midwife.yaml) | Socratic tutor |
-| [`the-diff`](personas/specialized/the-diff.yaml) | Code review |
-| [`hollis`](personas/personality/hollis.yaml) | Fewest true words |
-| [`cora-flint`](personas/personality/cora-flint.yaml) | Next physical action |
-| [`lila-moreau`](personas/creative/lila-moreau.yaml) | Literary revision |
-| [`grit`](personas/experimental/grit.yaml) | Ugly patch before lunch |
+| [Ada Vale](https://sullyvickers1.github.io/grokbot-persona-database/p/ada-vale.html) | Systems and incidents |
+| [Hollis](https://sullyvickers1.github.io/grokbot-persona-database/p/hollis.html) | Fewest true words |
+| [The Midwife](https://sullyvickers1.github.io/grokbot-persona-database/p/the-midwife.html) | One question, then a wait |
+| [The Diff](https://sullyvickers1.github.io/grokbot-persona-database/p/the-diff.html) | Code review in the hunk |
+| [Lila Moreau](https://sullyvickers1.github.io/grokbot-persona-database/p/lila-moreau.html) | Literary revision |
+| [Grit](https://sullyvickers1.github.io/grokbot-persona-database/p/grit.html) | Ugly patch before lunch |
 
-## What's inside
+## What is in the catalog
 
 | Category | Count |
 | --- | ---: |
@@ -62,51 +43,14 @@ python examples/load_persona.py ada-vale "The p99 just doubled after we enabled 
 | Experimental | 4 |
 | **Total** | **60** |
 
-People have names. Specialized tools may be titles (`The Midwife`, `The Diff`) when the job is the identity. Given names and surnames are unique.
+Each persona has a job, a speaking contract, refusals, and three worked examples.
 
-## Validate
+## For maintainers
 
-```bash
-npm install
-npm run validate
-npm run index
-```
-
-`validate` checks the schema, folder contract, unique names, and neighbor overlap. It does not run a live model.
-
-## Layout
-
-```text
-web/               Browser catalog. Copy prompts here.
-personas/          YAML source of truth, one file per persona
-schemas/           JSON Schema
-examples/          Node and Python loaders
-templates/         New-persona templates
-docs/              Format, best practices, versioning
-scripts/           validate, index, YAML writer
-catalog.json       Generated index. Do not hand-edit.
-```
-
-## Rules
-
-1. Three sentences a neighbor would not say.
-2. A prompt that changes the next answer: identity, thinking, speech, output, refusals.
-3. Schema 1.1.0, including three examples in different situations.
-4. No fake citations, no doctor/lawyer of record, no exploit kits.
-5. If removing the name does not change the answers, it is not a persona.
-
-See [`CONTRIBUTING.md`](CONTRIBUTING.md).
-
-## Versioning
-
-- The collection uses semver on the repo tag.
-- Each persona has its own `version`. MAJOR means behavior change.
-- IDs do not rename after publish. Deprecate and set `successor_id`.
+YAML in [`personas/`](personas/) is how new voices are added. The GitHub Pages site is generated from those files. Contributors should read [`CONTRIBUTING.md`](CONTRIBUTING.md). Users of the catalog never need that path.
 
 ## License
 
-[MIT](LICENSE). Use these in products, research, and personal setups. Attribution is appreciated, not required.
+[MIT](LICENSE). Use the prompts in products, research, and personal setups. Attribution is appreciated, not required.
 
-## Status
-
-v1.1.0. Sixty personas. Schema 1.1.0.
+Curated by [Sully Vickers](https://github.com/sullyvickers1).
