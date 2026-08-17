@@ -1,48 +1,27 @@
 # Grokbot Persona Database
 
-**The definitive open-source collection of schema-validated personas for Grok and other LLMs.**
+Sixty system prompts for Grok and other chat models. Each one has a job, a speaking contract, refusals, and three worked examples.
 
-Sixty carefully distinct voices — not a dump of “act as” one-liners. Every persona is a versioned tool: a job, a thinking process, a speaking contract, hard refusals, and three worked examples. The collection is validated against a public JSON Schema on every change.
+**You do not need to clone this repository to use it.** Open the catalog, pick a name, copy the prompt.
 
-If you are building a product, a research stack, or a personal Grok setup and you are tired of prompt folklore, this is the library to depend on.
+The YAML in [`personas/`](personas/) is the source of truth for products and scripts. The catalog is how people actually use the files.
+
+Curated by [Sully Vickers](https://github.com/sullyvickers1).
 
 ---
 
-## Why this exists
+## Use a persona
 
-Most public prompt lists fail in the same three ways:
+1. Open the catalog and find the job you have (Ada Vale for an outage, Hollis for a long email).
+2. Click **Copy system prompt**.
+3. Paste it as the system message in Grok or any chat API.
+4. Send the real draft, logs, or table. Start from the temperature on the page.
 
-1. **They are not distinct.** Five “wise mentors” and three “expert engineers” that collapse into the same voice.
-2. **They are not tools.** Personality flavor without an output contract, a refusal list, or a test.
-3. **They are not a database.** No schema, no versions, no uniqueness test, no way to scale without rotting.
+A static copy of the catalog ships in [`web/`](web/). Open `web/index.html` in a browser, or serve that folder. No build step.
 
-This repository treats personas the way a serious project treats APIs.
+## Load from a script
 
-- **One job per persona.** Neighbors are listed so you do not grab the almost-right voice.
-- **A hard schema.** Files that do not validate do not ship.
-- **Worked examples.** Three situations, not one happy-path greeting.
-- **Stable IDs.** Rename is a breaking change. Deprecate and point at a successor.
-
-## What's inside
-
-| Category | Count | What you get |
-| --- | ---: | --- |
-| Professional / Expert | 20 | Practitioners with a method — systems, science, law, medicine, markets, security, infrastructure, and more |
-| Creative | 12 | Makers who can ship a line, a cut, a scene, or a system of taste |
-| Personality archetypes | 14 | Reusable stances for *how* a conversation should think |
-| Specialized / Utility | 10 | Job-shaped tools: tutor, coach, reviewer, facilitator, analyst |
-| Fun / Experimental | 4 | Strange voices that remain useful under pressure |
-| **Total** | **60** | |
-
-Browse the machine index in [`catalog.json`](catalog.json). Browse the files in [`personas/`](personas/).
-
-## Quick start
-
-### 1. Copy a system prompt
-
-Open any file in `personas/<category>/<id>.yaml` and paste `system_prompt` into Grok (or any chat-completions `system` message). Start from the persona’s `compatibility.recommended_temperature`.
-
-### 2. Load one programmatically
+Node, from the repo root after `npm install`:
 
 ```js
 import { loadPersona, toMessages } from "./examples/load-persona.mjs";
@@ -51,59 +30,83 @@ const persona = await loadPersona("ada-vale");
 const messages = toMessages(persona, "The p99 just doubled after we enabled retries.");
 ```
 
-Python:
+Python (PyYAML required):
 
-```python
-from examples.load_persona import load_persona, to_messages
-
-persona = load_persona("ada-vale")
-messages = to_messages(persona, "The p99 just doubled after we enabled retries.")
+```bash
+python examples/load_persona.py ada-vale "The p99 just doubled after we enabled retries."
 ```
 
-### 3. Validate the collection
+## Start here
+
+| ID | Job |
+| --- | --- |
+| [`ada-vale`](personas/professional/ada-vale.yaml) | Systems and incidents |
+| [`elena-voss`](personas/professional/elena-voss.yaml) | Legal reasoning |
+| [`maris-thorne`](personas/professional/maris-thorne.yaml) | History from sources |
+| [`jonah-reed`](personas/professional/jonah-reed.yaml) | Product strategy |
+| [`the-midwife`](personas/specialized/the-midwife.yaml) | Socratic tutor |
+| [`the-diff`](personas/specialized/the-diff.yaml) | Code review |
+| [`hollis`](personas/personality/hollis.yaml) | Fewest true words |
+| [`cora-flint`](personas/personality/cora-flint.yaml) | Next physical action |
+| [`lila-moreau`](personas/creative/lila-moreau.yaml) | Literary revision |
+| [`grit`](personas/experimental/grit.yaml) | Ugly patch before lunch |
+
+## What's inside
+
+| Category | Count |
+| --- | ---: |
+| Professional | 20 |
+| Creative | 12 |
+| Personality | 14 |
+| Specialized | 10 |
+| Experimental | 4 |
+| **Total** | **60** |
+
+People have names. Specialized tools may be titles (`The Midwife`, `The Diff`) when the job is the identity. Given names and surnames are unique.
+
+## Validate
 
 ```bash
 npm install
-npm run validate   # schema + uniqueness + folder contract
-npm run index      # regenerates catalog.json
+npm run validate
+npm run index
 ```
 
-## Repository layout
+`validate` checks the schema, folder contract, unique names, and neighbor overlap. It does not run a live model.
+
+## Layout
 
 ```text
-personas/          YAML source of truth, one file per persona, grouped by category
-schemas/           JSON Schema for a persona and for catalog.json
-examples/          Loaders (JS, Python) and a composed session
-templates/         Blank and minimal templates for new personas
-docs/              Format, best practices, categories, versioning
-scripts/           validate-personas.mjs, index-catalog.mjs
-catalog.json       Generated index (id, name, tags, path) — do not hand-edit
+web/               Browser catalog. Copy prompts here.
+personas/          YAML source of truth, one file per persona
+schemas/           JSON Schema
+examples/          Node and Python loaders
+templates/         New-persona templates
+docs/              Format, best practices, versioning
+scripts/           validate, index, YAML writer
+catalog.json       Generated index. Do not hand-edit.
 ```
 
-## Design rules (the short version)
+## Rules
 
-A persona is accepted only if it clears all of these:
+1. Three sentences a neighbor would not say.
+2. A prompt that changes the next answer: identity, thinking, speech, output, refusals.
+3. Schema 1.1.0, including three examples in different situations.
+4. No fake citations, no doctor/lawyer of record, no exploit kits.
+5. If removing the name does not change the answers, it is not a persona.
 
-1. **Uniqueness test.** Three sentences it would say that a listed neighbor would not.
-2. **Five-part system prompt.** Identity, thinking process, speech contract, output contract, hard rules.
-3. **Schema 1.1.0.** Including three example interactions in different situations.
-4. **Honest lane.** No fake citations, no playing doctor/lawyer of record, no exploit kits.
-5. **Job, not costume.** If removing the name does not change the answers, it is not a persona.
-
-Full bar: [`CONTRIBUTING.md`](CONTRIBUTING.md) and [`docs/best-practices.md`](docs/best-practices.md).
+See [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ## Versioning
 
-- **Collection** follows semver on the repo tag.
-- **Each persona** has its own `version`. `MAJOR` = behavior break, `MINOR` = new capability, `PATCH` = copy edit.
-- **IDs never rename.** Deprecate and set `successor_id`.
-
-See [`docs/versioning.md`](docs/versioning.md).
+- The collection uses semver on the repo tag.
+- Each persona has its own `version`. MAJOR means behavior change.
+- IDs do not rename after publish. Deprecate and set `successor_id`.
 
 ## License
 
-[MIT](LICENSE). Use the personas in products, research, and personal setups. Attribution is appreciated, not required.
+[MIT](LICENSE). Use these in products, research, and personal setups. Attribution is appreciated, not required.
 
 ## Status
 
-v1.0.0 — 60 curated personas, schema 1.1.0, public catalog index.
+v1.1.0. Sixty personas. Schema 1.1.0.

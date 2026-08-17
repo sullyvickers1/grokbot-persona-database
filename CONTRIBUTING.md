@@ -19,12 +19,29 @@ Read this before you open a PR. Maintainers will close incomplete submissions wi
 - Fake citations, invented case law, or prompts that claim to be the user’s doctor, lawyer, or PE.
 - Anything that helps with crimes, exploits, self-harm methods, or concealment of assets.
 - Drive-by dumps of 10 half-finished YAML files.
+- Recycled given names or surnames. `Ada Vale` and `Ada Kim` is how a factory names people.
 
 ## Uniqueness test (required)
 
 In the PR body, name **two neighbor personas** and paste **three sentences** your persona would say that those neighbors would not.
 
 If a reviewer can swap the name and the answers still fit the neighbor, the PR fails.
+
+CI also fails the PR if:
+
+- a given name or surname is reused
+- example replies overlap a listed neighbor too much (token Jaccard)
+- two personas share a signature move
+- two personas share the same `compatibility.notes`
+
+That is a floor, not the test. A live model can still collapse two voices. Run the pairs in [`docs/evals/collision-pairs.md`](docs/evals/collision-pairs.md) when you touch a crowded neighborhood.
+
+## Naming
+
+- **People** (professional, creative, most personality): first name + surname, both unique in the collection.
+- **Mononyms** are allowed for personality archetypes (Hollis, Wren, Moss, Grit) when the voice is a stance, not a résumé.
+- **Titles** are allowed in specialized/experimental when the job *is* the identity (`The Midwife`, `The Diff`, `ORION-7`).
+- Do not name someone after the trait (`Reed Blunt`). Given names and surnames must be unique across the collection.
 
 ## File contract
 
@@ -33,18 +50,20 @@ If a reviewer can swap the name and the answers still fit the neighbor, the PR f
 3. `slug` equals `id`.
 4. `category` matches the parent folder.
 5. `schema_version` is `1.1.0`.
-6. `system_prompt` is at least 1,200 characters and includes:
+6. `system_prompt` is at least 720 characters and does these jobs (headings optional):
    - Identity
    - Charge (one-sentence mission)
-   - How you think (numbered)
+   - How you think
    - How you speak
    - Output contract
    - Hard rules
-   - Signature move
-7. At least **three** `example_interactions` in different situations. The assistant replies must *sound like* the persona.
-8. At most **two** personality traits at intensity 5.
+   - Signature move — or an equivalent “tell”
+7. At least **three** `example_interactions` in different situations. The assistant replies must *sound like* the persona. Creative personas should return an artifact (a stanza, a scene, a shot, a claim line), not only advice about one.
+8. At most **two** personality traits at intensity 5. Prefer a specific trait (`hunk-strict`) over wallpaper (`calm`, `precise`, `patient`).
 9. `related_personas` lists real IDs.
 10. `license` is `MIT`.
+11. `successor_id` is omitted unless the persona is deprecated.
+12. `compatibility.notes` is one sentence that could only belong to this file.
 
 Run locally:
 
@@ -62,6 +81,7 @@ CI runs the same checks. A red X is not a suggestion.
 - [ ] Examples are not three restatements of the same move.
 - [ ] Refusals are real (citations, professional stamps, weapons, self-harm).
 - [ ] Neighbors in `related_personas` are the ones a hurried user would actually confuse.
+- [ ] Name does not collide.
 - [ ] No schema warnings.
 
 ## Version bumps
@@ -72,11 +92,11 @@ CI runs the same checks. A red X is not a suggestion.
 | New guideline, new domain, stronger contract, same job | MINOR |
 | Different job, different refusals, different output shape | MAJOR, or a new ID |
 
-Never rename an ID. Set `status: deprecated` and `successor_id`.
+Never rename an ID after it has been published. Set `status: deprecated` and `successor_id`.
 
 ## Voice of the project
 
-Documentation is plain and slightly formal. No emoji in docs, YAML, or commit titles. No “awesome” lists. No hype adjectives that could apply to any persona.
+Documentation is plain and slightly formal. No emoji in docs, YAML, or commit titles. No “awesome” lists. No hype adjectives that could apply to any persona. Do not call this the definitive standard. Other people decide that by citing it.
 
 ## Code of conduct
 

@@ -25,7 +25,7 @@ for (const category of categories) {
       category: data.category,
       subcategory: data.subcategory,
       tags: data.tags,
-      short_description: data.short_description,
+      short_description: String(data.short_description ?? "").trim(),
       path: `personas/${category}/${name}`,
       version: data.version,
       status: data.status,
@@ -57,13 +57,15 @@ for (const category of categories) {
   }
 }
 full.sort((a, b) => a.id.localeCompare(b.id));
+const fullJson = JSON.stringify(full, null, 2) + "\n";
+
+mkdirSync(join(root, "web"), { recursive: true });
+writeFileSync(join(root, "web/personas.json"), fullJson);
+
 if (existsSync(join(root, "src"))) {
   mkdirSync(join(root, "src/data"), { recursive: true });
-  writeFileSync(
-    join(root, "src/data/personas.json"),
-    JSON.stringify(full, null, 2) + "\n",
-  );
-  console.log(`Indexed ${personas.length} personas → catalog.json and src/data/personas.json`);
+  writeFileSync(join(root, "src/data/personas.json"), fullJson);
+  console.log(`Indexed ${personas.length} personas → catalog.json, web/personas.json, src/data/personas.json`);
 } else {
-  console.log(`Indexed ${personas.length} personas → catalog.json`);
+  console.log(`Indexed ${personas.length} personas → catalog.json, web/personas.json`);
 }

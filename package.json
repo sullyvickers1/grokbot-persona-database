@@ -1,7 +1,7 @@
 {
   "name": "grokbot-persona-database",
-  "version": "1.0.0",
-  "description": "The definitive open-source, schema-validated collection of Grokbot and LLM personas.",
+  "version": "1.1.0",
+  "description": "Sixty system prompts for Grok and other models, with a browser catalog.",
   "license": "MIT",
   "type": "module",
   "scripts": {
@@ -24,6 +24,7 @@
     "examples",
     "templates",
     "docs",
+    "web",
     "catalog.json"
   ],
   "devDependencies": {

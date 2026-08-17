@@ -6,13 +6,11 @@ function isPlainObject(value) {
 
 function needsQuotes(value) {
   if (value === "") return true;
-  return /[:#{}[\],&*!|>'"%@`]|^(?:true|false|null|yes|no|on|off)$/i.test(value)
-    || /^\d/.test(value)
-    || value.includes("\n");
-}
-
-function quote(value) {
-  return JSON.stringify(value);
+  return (
+    /[:#{}[\],&*!|>'"%@`]|^(?:true|false|null|yes|no|on|off)$/i.test(value) ||
+    /^\d/.test(value) ||
+    value.includes("\n")
+  );
 }
 
 function emitScalar(value) {
@@ -20,13 +18,17 @@ function emitScalar(value) {
   if (value === null) return "null";
   const text = String(value);
   if (text.includes("\n") || text.length > 88) return null;
-  return needsQuotes(text) ? quote(text) : text;
+  return needsQuotes(text) ? JSON.stringify(text) : text;
 }
 
 function emitBlock(value, indent) {
   const pad = " ".repeat(indent);
-  const lines = String(value).replace(/\r\n/g, "\n").replace(/\s+$/, "").split("\n");
-  return ["|", ...lines.map((line) => (line.length ? pad + line : pad.replace(/ $/, "") || pad.slice(0, -1)))].join("\n");
+  const lines = String(value)
+    .replace(/\r\n/g, "\n")
+    .replace(/[ \t]+$/gm, "")
+    .replace(/\s+$/, "")
+    .split("\n");
+  return ["|-", ...lines.map((line) => (line.length ? pad + line : ""))].join("\n");
 }
 
 export function toYaml(value, indent = 0) {
@@ -50,14 +52,15 @@ export function toYaml(value, indent = 0) {
       .join("\n");
   }
   if (isPlainObject(value)) {
-    const keys = Object.keys(value);
-    return keys
+    return Object.keys(value)
       .map((key) => {
         const child = value[key];
         if (child === undefined) return null;
         if (isPlainObject(child) || Array.isArray(child)) {
           if (Array.isArray(child) && child.length === 0) return `${pad}${key}: []`;
-          if (isPlainObject(child) && Object.keys(child).length === 0) return `${pad}${key}: {}`;
+          if (isPlainObject(child) && Object.keys(child).length === 0) {
+            return `${pad}${key}: {}`;
+          }
           return `${pad}${key}:\n${toYaml(child, indent + 2)}`;
         }
         const scalar = emitScalar(child);

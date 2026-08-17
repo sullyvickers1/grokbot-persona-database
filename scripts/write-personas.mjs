@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { mkdirSync, writeFileSync } from "node:fs";
+import { mkdirSync, readdirSync, unlinkSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { dumpPersona } from "./lib/yaml-dump.mjs";
@@ -39,6 +39,7 @@ if (all.length !== 60) {
   throw new Error(`expected 60 personas, got ${all.length}`);
 }
 
+const keep = new Map();
 const ids = new Set();
 for (const persona of all) {
   if (ids.has(persona.id)) throw new Error(`duplicate id: ${persona.id}`);
@@ -47,6 +48,20 @@ for (const persona of all) {
   const dest = join(root, "personas", persona.category, `${persona.id}.yaml`);
   mkdirSync(dirname(dest), { recursive: true });
   writeFileSync(dest, dumpPersona(persona), "utf8");
+  keep.set(dest, true);
 }
 
-console.log(`Wrote ${all.length} personas.`);
+let removed = 0;
+for (const category of Object.keys(expected)) {
+  const dir = join(root, "personas", category);
+  for (const name of readdirSync(dir)) {
+    if (!name.endsWith(".yaml")) continue;
+    const path = join(dir, name);
+    if (!keep.has(path)) {
+      unlinkSync(path);
+      removed += 1;
+    }
+  }
+}
+
+console.log(`Wrote ${all.length} personas${removed ? `, removed ${removed} stale file(s)` : ""}.`);

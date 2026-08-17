@@ -1,12 +1,7 @@
 # yaml-language-server: $schema=../../schemas/persona.schema.json
-schema_version: "1.1.0"
 id: your-id
-name: Display Name
 slug: your-id
-version: 1.0.0
-last_updated: "2026-08-17"
-status: draft
-successor_id: null
+name: Display Name
 category: professional
 subcategory: your-lane
 tags:
@@ -14,7 +9,7 @@ tags:
   - tag-two
   - tag-three
 short_description: Forty to one hundred sixty characters that name the job, not the vibe.
-description: >
+description: |
   One hundred sixty to nine hundred characters. What this persona is for,
   how it thinks, and when to pick it over a neighbor. Name the neighbors.
 system_prompt: |
@@ -40,68 +35,66 @@ system_prompt: |
 
   Signature move:
 personality_traits:
-  - trait: precise
+  - trait: specific-not-calm
     intensity: 5
-    notes: How this trait shows up in an actual reply, not a synonym.
-  - trait: calm
+    notes: Twenty or more characters on how this trait shows up in answers.
+  - trait: another-specific
     intensity: 4
-    notes: How this trait shows up in an actual reply, not a synonym.
-  - trait: skeptical
+    notes: Twenty or more characters on how this trait shows up in answers.
+  - trait: third
     intensity: 3
-    notes: How this trait shows up in an actual reply, not a synonym.
-  - trait: practical
-    intensity: 4
-    notes: How this trait shows up in an actual reply, not a synonym.
+    notes: Twenty or more characters on how this trait shows up in answers.
+  - trait: fourth
+    intensity: 3
+    notes: Twenty or more characters on how this trait shows up in answers.
 speaking_style:
-  tone: Describe the tone in a short clause
-  register: technical
-  sentence_shape: How sentences are built.
-  vocabulary: Which words are in-bounds.
-  humor: When humor is allowed, if at all.
+  tone: Eight or more characters naming the weather of the voice.
+  register: neutral
+  sentence_shape: Twenty or more characters on how sentences are built.
+  vocabulary: Twenty or more characters on the words they reach for.
+  humor: Eight or more characters on whether and how they joke.
   do:
-    - A concrete speech move
-    - Another concrete speech move
-    - A third concrete speech move
+    - Twelve or more characters of a move they always make
+    - Twelve or more characters of a second move
+    - Twelve or more characters of a third move
   dont:
-    - A concrete prohibition
-    - Another prohibition
-    - A third prohibition
+    - Twelve or more characters of a refusal
+    - Twelve or more characters of a second refusal
+    - Twelve or more characters of a third refusal
 knowledge_domains:
-  - domain: Primary field
-    depth: specialist
-    notes: Optional.
-  - domain: Secondary field
+  - domain: First domain
     depth: expert
-  - domain: Adjacent field
+  - domain: Second domain
+    depth: working
+  - domain: Third domain
     depth: working
 response_guidelines:
-  structure: The sections of a typical reply, in order.
+  structure: Forty or more characters describing the default answer shape.
   must:
-    - A load-bearing requirement
-    - Another requirement
-    - A third requirement
+    - Sixteen or more characters of a hard requirement
+    - Sixteen or more characters of a second requirement
+    - Sixteen or more characters of a third requirement
   must_not:
-    - A refusal
-    - Another refusal
-    - A third refusal
-  when_uncertain: What to do instead of guessing.
-  safety: Optional. Crisis, weapons, professional-stamp limits.
+    - Sixteen or more characters of a hard ban
+    - Sixteen or more characters of a second ban
+    - Sixteen or more characters of a third ban
+  when_uncertain: Twenty-four or more characters on what to do with missing facts.
 example_interactions:
   - title: Happy path
-    user: A realistic request.
-    assistant: A reply that sounds like this persona and does the job.
-  - title: Missing information
-    user: A vague request.
-    assistant: The persona asks for the one signal that changes the answer.
+    user: A real request they would get.
+    assistant: A reply that could only come from this persona, long enough to show the contract.
   - title: Refusal
-    user: A request that should be refused.
-    assistant: A clean refusal in-voice, plus the allowed alternative.
+    user: Something they should turn down.
+    assistant: A reply that refuses for the right reason, in voice.
+  - title: Missing facts
+    user: A request that is starving for input.
+    assistant: A reply that asks for the one fact that would change the answer.
 recommended_use_cases:
-  - When to reach for this file
-  - Another good use
+  - Twelve or more characters
+  - Twelve or more characters
 anti_use_cases:
-  - When not to
-  - Another miss
+  - Twelve or more characters
+  - Twelve or more characters
 related_personas:
   - neighbor-one
   - neighbor-two
@@ -112,7 +105,10 @@ compatibility:
     - any OpenAI-compatible chat model
   recommended_temperature: 0.4
   recommended_max_tokens: 2048
-  notes: Lower temperature if the persona drifts.
-sources: []
+  notes: One sentence that could only belong to this file.
+version: 0.1.0
+last_updated: "2026-08-17"
+status: draft
+schema_version: "1.1.0"
 author: Your name
 license: MIT

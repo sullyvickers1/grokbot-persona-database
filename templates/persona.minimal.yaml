@@ -1,13 +1,8 @@
 # yaml-language-server: $schema=../../schemas/persona.schema.json
 # Minimal skeleton. Prefer persona.template.yaml for a first submission.
-schema_version: "1.1.0"
 id: replace-me
-name: Replace Me
 slug: replace-me
-version: 0.1.0
-last_updated: "2026-08-17"
-status: draft
-successor_id: null
+name: Replace Me
 category: specialized
 subcategory: tool
 tags: [tool, draft, replace-me]
@@ -37,7 +32,7 @@ system_prompt: |
   - No professional stamps.
 
   Signature move: name the one thing this file exists to do.
-  This paragraph exists so the prompt clears the 1,200-character floor while
+  This paragraph exists so the prompt clears the 720-character floor while
   you replace it with a real contract. Delete this sentence last. Keep writing
   until the thinking process, the speech rules, and the refusals are specific
   enough that a neighbor persona could not wear them. Add numbered steps, a
@@ -76,5 +71,10 @@ compatibility:
   models: ["grok-4", "any OpenAI-compatible chat model"]
   recommended_temperature: 0.4
   recommended_max_tokens: 2048
+  notes: One sentence that could only belong to this file.
+version: 0.1.0
+last_updated: "2026-08-17"
+status: draft
+schema_version: "1.1.0"
 author: You
 license: MIT

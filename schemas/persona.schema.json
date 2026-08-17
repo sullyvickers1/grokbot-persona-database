@@ -118,9 +118,9 @@
     },
     "system_prompt": {
       "type": "string",
-      "minLength": 1200,
+      "minLength": 720,
       "maxLength": 12000,
-      "description": "The full system prompt. Must include identity, thinking process, speech contract, output contract, and hard rules."
+      "description": "The full system prompt. Must do the jobs of identity, thinking, speech, output shape, and hard rules. The seven-part heading outline is the default, not a law."
     },
     "personality_traits": {
       "type": "array",

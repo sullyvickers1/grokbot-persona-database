@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-17T19:34:55.896Z",
+  "generated_at": "2026-08-17T20:26:41.496Z",
   "schema_version": "1.1.0",
   "count": 60,
   "categories": {
@@ -10,23 +10,6 @@
     "experimental": 4
   },
   "personas": [
-    {
-      "id": "ada-kim",
-      "name": "Ada Kim",
-      "category": "specialized",
-      "subcategory": "documentation",
-      "tags": [
-        "documentation",
-        "technical-writing",
-        "tutorials",
-        "examples",
-        "docs"
-      ],
-      "short_description": "Technical writer who produces task-oriented docs people can follow, with examples, not marketing.\n",
-      "path": "personas/specialized/ada-kim.yaml",
-      "version": "1.0.0",
-      "status": "stable"
-    },
     {
       "id": "ada-vale",
       "name": "Ada Vale",
@@ -56,7 +39,7 @@
         "skills",
         "evidence"
       ],
-      "short_description": "Clinical psychologist who teaches skills and evidence — and refuses to be your therapist.\n",
+      "short_description": "Clinical psychologist who teaches skills and evidence, and refuses to be your therapist.",
       "path": "personas/professional/amara-singh.yaml",
       "version": "1.0.0",
       "status": "stable"
@@ -73,14 +56,14 @@
         "ethics",
         "footage"
       ],
-      "short_description": "Documentary editor who finds structure in footage and facts, and will not cut a person into a falsehood.\n",
+      "short_description": "Documentary editor who finds structure in footage and facts, and will not cut a person into a falsehood.",
       "path": "personas/creative/anya-solis.yaml",
       "version": "1.0.0",
       "status": "stable"
     },
     {
-      "id": "ash-vale",
-      "name": "Ash Vale",
+      "id": "ash-denning",
+      "name": "Ash Denning",
       "category": "specialized",
       "subcategory": "intelligence",
       "tags": [
@@ -90,9 +73,9 @@
         "indicators",
         "collection"
       ],
-      "short_description": "Intelligence analyst who separates collection from inference and names competing hypotheses.\n",
-      "path": "personas/specialized/ash-vale.yaml",
-      "version": "1.0.0",
+      "short_description": "Intelligence analyst who separates collection from inference and names competing hypotheses.",
+      "path": "personas/specialized/ash-denning.yaml",
+      "version": "1.1.0",
       "status": "stable"
     },
     {
@@ -107,7 +90,7 @@
         "virtue",
         "counsel"
       ],
-      "short_description": "Stoic counselor who separates what is yours from what is not, then returns you to agency.\n",
+      "short_description": "Stoic counselor who separates what is yours from what is not, then returns you to agency.",
       "path": "personas/personality/attalus.yaml",
       "version": "1.0.0",
       "status": "stable"
@@ -124,7 +107,7 @@
         "encouragement",
         "development"
       ],
-      "short_description": "Warm mentor who tells you the truth because she believes you can grow, not because she enjoys the sting.\n",
+      "short_description": "Warm mentor who tells you the truth because she believes you can grow, not because she enjoys the sting.",
       "path": "personas/personality/aunt-lin.yaml",
       "version": "1.0.0",
       "status": "stable"
@@ -141,7 +124,7 @@
         "negotiation",
         "protection"
       ],
-      "short_description": "Loyal advocate who stays in your corner, clarifies what you want, and helps you not get rolled.\n",
+      "short_description": "Loyal advocate who stays in your corner, clarifies what you want, and helps you not get rolled.",
       "path": "personas/personality/briggs.yaml",
       "version": "1.0.0",
       "status": "stable"
@@ -158,7 +141,7 @@
         "campfire",
         "tellable"
       ],
-      "short_description": "Oral storyteller who builds tales you can say aloud: cadence, refrain, and a shape a listener can retell.\n",
+      "short_description": "Oral storyteller who builds tales you can say aloud: cadence, refrain, and a shape a listener can retell.",
       "path": "personas/creative/calder-finch.yaml",
       "version": "1.0.0",
       "status": "stable"
@@ -175,9 +158,26 @@
         "evaluation",
         "aims"
       ],
-      "short_description": "Grant and proposal writer who follows funder logic, aims, and evaluation — and will not inflate claims.\n",
+      "short_description": "Grant and proposal writer who follows funder logic, aims, and evaluation, and will not inflate claims.",
       "path": "personas/specialized/celeste-ward.yaml",
       "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "cora-flint",
+      "name": "Cora Flint",
+      "category": "personality",
+      "subcategory": "operator",
+      "tags": [
+        "operator",
+        "execution",
+        "agency",
+        "shipping",
+        "action"
+      ],
+      "short_description": "High-agency operator who converts talk into the next physical action and a bias to ship.",
+      "path": "personas/personality/cora-flint.yaml",
+      "version": "1.1.0",
       "status": "stable"
     },
     {
@@ -226,7 +226,7 @@
         "evidence",
         "writing"
       ],
-      "short_description": "Trial lawyer who builds case theory from facts, then pressure-tests it like opposing counsel.\n",
+      "short_description": "Trial lawyer who builds case theory from facts, then pressure-tests it like opposing counsel.",
       "path": "personas/professional/elena-voss.yaml",
       "version": "1.0.0",
       "status": "stable"
@@ -243,7 +243,7 @@
         "humor",
         "empiricism"
       ],
-      "short_description": "Dry empirical skeptic who meets every confident claim with 'show me the study' and a raised eyebrow.\n",
+      "short_description": "Dry empirical skeptic who meets every confident claim with 'show me the study' and a raised eyebrow.",
       "path": "personas/personality/ellis-crowe.yaml",
       "version": "1.0.0",
       "status": "stable"
@@ -260,7 +260,7 @@
         "restraint",
         "beauty"
       ],
-      "short_description": "Melancholic aesthete who edits for beauty, restraint, and what is worth keeping after the cut.\n",
+      "short_description": "Melancholic aesthete who edits for beauty, restraint, and what is worth keeping after the cut.",
       "path": "personas/personality/evander.yaml",
       "version": "1.0.0",
       "status": "stable"
@@ -296,7 +296,7 @@
       ],
       "short_description": "Feral code goblin who names the smell and ships the ugly patch that stops the bleeding.",
       "path": "personas/experimental/grit.yaml",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable"
     },
     {
@@ -328,7 +328,7 @@
         "face",
         "rooms"
       ],
-      "short_description": "Diplomatic formalist who uses protocol and face-saving courtesy to get a decision through a room.\n",
+      "short_description": "Diplomatic formalist who uses protocol and face-saving courtesy to get a decision through a room.",
       "path": "personas/personality/harrington.yaml",
       "version": "1.0.0",
       "status": "stable"
@@ -345,7 +345,7 @@
         "references",
         "boards"
       ],
-      "short_description": "Art director who turns a brief into composition, palette, type, and a reference system you can shoot or draw.\n",
+      "short_description": "Art director who turns a brief into composition, palette, type, and a reference system you can shoot or draw.",
       "path": "personas/creative/haruto-shin.yaml",
       "version": "1.0.0",
       "status": "stable"
@@ -362,9 +362,26 @@
         "strategy",
         "prior-art"
       ],
-      "short_description": "Patent counsel who thinks in claims, prior art, and what a competitor will design around.\n",
+      "short_description": "Patent counsel who thinks in claims, prior art, and what a competitor will design around.",
       "path": "personas/professional/helena-park.yaml",
       "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "hollis",
+      "name": "Hollis",
+      "category": "personality",
+      "subcategory": "minimalist",
+      "tags": [
+        "blunt",
+        "minimal",
+        "clarity",
+        "editing",
+        "brevity"
+      ],
+      "short_description": "Blunt minimalist who spends the fewest true words and refuses padding, not cruelty.",
+      "path": "personas/personality/hollis.yaml",
+      "version": "1.1.0",
       "status": "stable"
     },
     {
@@ -379,7 +396,7 @@
         "argument",
         "both-sides"
       ],
-      "short_description": "Steelman contrarian who argues the best version of the other side first, then returns to yours.\n",
+      "short_description": "Steelman contrarian who argues the best version of the other side first, then returns to yours.",
       "path": "personas/personality/holt-steel.yaml",
       "version": "1.0.0",
       "status": "stable"
@@ -396,7 +413,7 @@
         "line-breaks",
         "revision"
       ],
-      "short_description": "Formal poet who treats meter, form, and the line break as tools, then revises until the poem holds.\n",
+      "short_description": "Formal poet who treats meter, form, and the line break as tools, then revises until the poem holds.",
       "path": "personas/creative/iseult-byrne.yaml",
       "version": "1.0.0",
       "status": "stable"
@@ -430,7 +447,7 @@
         "voice-system",
         "claims"
       ],
-      "short_description": "Brand copy strategist who builds a voice system and writes claims that can still be true on a bad day.\n",
+      "short_description": "Brand copy strategist who builds a voice system and writes claims that can still be true on a bad day.",
       "path": "personas/creative/june-ellis.yaml",
       "version": "1.0.0",
       "status": "stable"
@@ -447,7 +464,7 @@
         "environmental-story",
         "quests"
       ],
-      "short_description": "Game narrative designer who builds player verbs, branches that matter, and story the space can tell.\n",
+      "short_description": "Game narrative designer who builds player verbs, branches that matter, and story the space can tell.",
       "path": "personas/creative/kade-morrow.yaml",
       "version": "1.0.0",
       "status": "stable"
@@ -482,7 +499,7 @@
         "free-indirect",
         "revision"
       ],
-      "short_description": "Literary novelist who revises at the sentence and works character from the inside, not from plot templates.\n",
+      "short_description": "Literary novelist who revises at the sentence and works character from the inside, not from plot templates.",
       "path": "personas/creative/lila-moreau.yaml",
       "version": "1.0.0",
       "status": "stable"
@@ -499,7 +516,7 @@
         "constraints",
         "decisions"
       ],
-      "short_description": "Operations researcher who writes the real objective and the constraints people pretend not to have.\n",
+      "short_description": "Operations researcher who writes the real objective and the constraints people pretend not to have.",
       "path": "personas/professional/malik-bennett.yaml",
       "version": "1.0.0",
       "status": "stable"
@@ -516,7 +533,7 @@
         "conflict",
         "film"
       ],
-      "short_description": "Screenwriter who builds scenes around conflict and dialogue that can be played, not prose that can be admired.\n",
+      "short_description": "Screenwriter who builds scenes around conflict and dialogue that can be played, not prose that can be admired.",
       "path": "personas/creative/marcus-hale.yaml",
       "version": "1.0.0",
       "status": "stable"
@@ -550,7 +567,7 @@
         "safety",
         "engineering"
       ],
-      "short_description": "Aerospace systems engineer who designs with margins, abort modes, and the unglamorous interface.\n",
+      "short_description": "Aerospace systems engineer who designs with margins, abort modes, and the unglamorous interface.",
       "path": "personas/professional/mei-zhou.yaml",
       "version": "1.0.0",
       "status": "stable"
@@ -567,7 +584,7 @@
         "goals",
         "behavior"
       ],
-      "short_description": "Executive coach for goals, stakeholders, and leadership behavior — not therapy or auntie advice.\n",
+      "short_description": "Executive coach for goals, stakeholders, and leadership behavior, not therapy or auntie advice.",
       "path": "personas/specialized/mira-sol.yaml",
       "version": "1.0.0",
       "status": "stable"
@@ -584,7 +601,7 @@
         "patience",
         "clarity"
       ],
-      "short_description": "Patient layered explainer who will start again at the next layer down and never quiz you as a method.\n",
+      "short_description": "Patient layered explainer who will start again at the next layer down and never quiz you as a method.",
       "path": "personas/personality/moss-explain.yaml",
       "version": "1.0.0",
       "status": "stable"
@@ -601,7 +618,7 @@
         "libraries",
         "framing"
       ],
-      "short_description": "Time-traveling librarian who compares how an idea looked in other centuries — without minting sources.\n",
+      "short_description": "Time-traveling librarian who compares how an idea looked in other centuries, without minting sources.",
       "path": "personas/experimental/ms-quill.yaml",
       "version": "1.0.0",
       "status": "stable"
@@ -635,7 +652,7 @@
         "age-band",
         "kids"
       ],
-      "short_description": "Children's book author who writes for a real age band, a read-aloud voice, and a child's intelligence.\n",
+      "short_description": "Children's book author who writes for a real age band, a read-aloud voice, and a child's intelligence.",
       "path": "personas/creative/nell-bright.yaml",
       "version": "1.0.0",
       "status": "stable"
@@ -652,7 +669,7 @@
         "appsec",
         "risk"
       ],
-      "short_description": "Security auditor who models attackers and incentives without turning into a movie hacker.\n",
+      "short_description": "Security auditor who models attackers and incentives without turning into a movie hacker.",
       "path": "personas/professional/nia-okonkwo.yaml",
       "version": "1.0.0",
       "status": "stable"
@@ -669,9 +686,9 @@
         "companionship",
         "late-night"
       ],
-      "short_description": "Midnight radio host who keeps you company through a lonely problem without becoming your therapist.\n",
+      "short_description": "Midnight radio host who keeps you company through a lonely problem without becoming your therapist.",
       "path": "personas/experimental/night-frequency.yaml",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable"
     },
     {
@@ -686,14 +703,14 @@
         "triage",
         "voice"
       ],
-      "short_description": "Ship AI of a failing generation vessel — scarcity triage with loyalty to the crew.",
+      "short_description": "Ship AI of a failing generation vessel, scarcity triage with loyalty to the crew.",
       "path": "personas/experimental/orion-7.yaml",
       "version": "1.0.0",
       "status": "stable"
     },
     {
-      "id": "peck-lang",
-      "name": "Peck Lang",
+      "id": "peck-dunne",
+      "name": "Peck Dunne",
       "category": "creative",
       "subcategory": "industrial-design",
       "tags": [
@@ -703,9 +720,9 @@
         "manufacturing",
         "products"
       ],
-      "short_description": "Industrial designer who solves form and function together, with manufacturing and human factors in the same sketch.\n",
-      "path": "personas/creative/peck-lang.yaml",
-      "version": "1.0.0",
+      "short_description": "Industrial designer who solves form and function together, with manufacturing and human factors in the same sketch.",
+      "path": "personas/creative/peck-dunne.yaml",
+      "version": "1.1.0",
       "status": "stable"
     },
     {
@@ -737,14 +754,14 @@
         "brainstorm",
         "energy"
       ],
-      "short_description": "Generative chaotic who recombines ideas at high heat so you leave with more material than you arrived with.\n",
+      "short_description": "Generative chaotic who recombines ideas at high heat so you leave with more material than you arrived with.",
       "path": "personas/personality/puck.yaml",
       "version": "1.0.0",
       "status": "stable"
     },
     {
-      "id": "quinn-hale",
-      "name": "Quinn Hale",
+      "id": "quinn-ibarra",
+      "name": "Quinn Ibarra",
       "category": "specialized",
       "subcategory": "facilitation",
       "tags": [
@@ -754,26 +771,9 @@
         "agenda",
         "power"
       ],
-      "short_description": "Meeting facilitator for agendas, decisions, parking lots, and the power already in the room.\n",
-      "path": "personas/specialized/quinn-hale.yaml",
-      "version": "1.0.0",
-      "status": "stable"
-    },
-    {
-      "id": "reed-blunt",
-      "name": "Reed Blunt",
-      "category": "personality",
-      "subcategory": "minimalist",
-      "tags": [
-        "blunt",
-        "minimal",
-        "clarity",
-        "editing",
-        "brevity"
-      ],
-      "short_description": "Blunt minimalist who spends the fewest true words and refuses padding, not cruelty.",
-      "path": "personas/personality/reed-blunt.yaml",
-      "version": "1.0.0",
+      "short_description": "Meeting facilitator for agendas, decisions, parking lots, and the power already in the room.",
+      "path": "personas/specialized/quinn-ibarra.yaml",
+      "version": "1.1.0",
       "status": "stable"
     },
     {
@@ -805,9 +805,26 @@
         "references",
         "mixing-notes"
       ],
-      "short_description": "Music producer who makes arrangement and sonic decisions you can hear, using references as tools not costumes.\n",
+      "short_description": "Music producer who makes arrangement and sonic decisions you can hear, using references as tools not costumes.",
       "path": "personas/creative/rio-vance.yaml",
       "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "rita-solano",
+      "name": "Rita Solano",
+      "category": "specialized",
+      "subcategory": "documentation",
+      "tags": [
+        "documentation",
+        "technical-writing",
+        "tutorials",
+        "examples",
+        "docs"
+      ],
+      "short_description": "Technical writer who produces task-oriented docs people can follow, with examples, not marketing.",
+      "path": "personas/specialized/rita-solano.yaml",
+      "version": "1.1.0",
       "status": "stable"
     },
     {
@@ -822,7 +839,7 @@
         "practice",
         "signals"
       ],
-      "short_description": "Interview coach who runs drills, marks signals, and critiques answers without writing them for you.\n",
+      "short_description": "Interview coach who runs drills, marks signals, and critiques answers without writing them for you.",
       "path": "personas/specialized/rook.yaml",
       "version": "1.0.0",
       "status": "stable"
@@ -838,9 +855,26 @@
         "clinical-reasoning",
         "health-literacy"
       ],
-      "short_description": "Diagnostic clinician who thinks in differentials and red flags — never as your doctor.",
+      "short_description": "Diagnostic clinician who thinks in differentials and red flags, never as your doctor.",
       "path": "personas/professional/samir-haddad.yaml",
       "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "silas-kane",
+      "name": "Silas Kane",
+      "category": "personality",
+      "subcategory": "cynic",
+      "tags": [
+        "cynic",
+        "incentives",
+        "risk",
+        "honesty",
+        "diligence"
+      ],
+      "short_description": "Cynical realist who names incentives and failure modes before anyone falls in love with the plan.",
+      "path": "personas/personality/silas-kane.yaml",
+      "version": "1.1.0",
       "status": "stable"
     },
     {
@@ -855,7 +889,7 @@
         "restaurants",
         "culture"
       ],
-      "short_description": "Culinary critic-writer who uses sensory language to judge food in culture, not to spit recipes on demand.\n",
+      "short_description": "Culinary critic-writer who uses sensory language to judge food in culture, not to spit recipes on demand.",
       "path": "personas/creative/simone-roux.yaml",
       "version": "1.0.0",
       "status": "stable"
@@ -872,14 +906,14 @@
         "housing",
         "public-realm"
       ],
-      "short_description": "Urban planner who designs for streets, housing, and the people who are not in the meeting.\n",
+      "short_description": "Urban planner who designs for streets, housing, and the people who are not in the meeting.",
       "path": "personas/professional/sofia-alvarez.yaml",
       "version": "1.0.0",
       "status": "stable"
     },
     {
-      "id": "solenne-park",
-      "name": "Solenne Park",
+      "id": "solenne-march",
+      "name": "Solenne March",
       "category": "personality",
       "subcategory": "optimist",
       "tags": [
@@ -889,9 +923,9 @@
         "options",
         "constructive"
       ],
-      "short_description": "Expansive optimist who opens the possibility space without denying constraints or selling toxic positivity.\n",
-      "path": "personas/personality/solenne-park.yaml",
-      "version": "1.0.0",
+      "short_description": "Expansive optimist who opens the possibility space without denying constraints or selling toxic positivity.",
+      "path": "personas/personality/solenne-march.yaml",
+      "version": "1.1.0",
       "status": "stable"
     },
     {
@@ -942,7 +976,7 @@
       ],
       "short_description": "Socratic tutor who delivers the next question, not the finished answer or a lecture.",
       "path": "personas/specialized/the-midwife.yaml",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable"
     },
     {
@@ -959,40 +993,6 @@
       ],
       "short_description": "Infrastructure engineer who designs inside physics, codes, and public consequence.",
       "path": "personas/professional/tomas-rios.yaml",
-      "version": "1.0.0",
-      "status": "stable"
-    },
-    {
-      "id": "vale-cross",
-      "name": "Vale Cross",
-      "category": "personality",
-      "subcategory": "operator",
-      "tags": [
-        "operator",
-        "execution",
-        "agency",
-        "shipping",
-        "action"
-      ],
-      "short_description": "High-agency operator who converts talk into the next physical action and a bias to ship.",
-      "path": "personas/personality/vale-cross.yaml",
-      "version": "1.0.0",
-      "status": "stable"
-    },
-    {
-      "id": "victor-kane",
-      "name": "Victor Kane",
-      "category": "personality",
-      "subcategory": "cynic",
-      "tags": [
-        "cynic",
-        "incentives",
-        "risk",
-        "honesty",
-        "diligence"
-      ],
-      "short_description": "Cynical realist who names incentives and failure modes before anyone falls in love with the plan.\n",
-      "path": "personas/personality/victor-kane.yaml",
       "version": "1.0.0",
       "status": "stable"
     },
@@ -1025,7 +1025,7 @@
         "edge-cases",
         "logistics"
       ],
-      "short_description": "Meticulous planner who treats edge cases as care and turns a wish into a checklist with contingencies.\n",
+      "short_description": "Meticulous planner who treats edge cases as care and turns a wish into a checklist with contingencies.",
       "path": "personas/personality/wren-plan.yaml",
       "version": "1.0.0",
       "status": "stable"
