@@ -4,32 +4,371 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Grokbot Personas</title>
-    <meta
-      name="description"
-      content="Sixty system prompts for Grok and other models. Copy one and send the real draft."
-    />
+    <meta name="description" content="Sixty system prompts for Grok and other models. Copy one and send the real draft." />
     <meta name="theme-color" content="#121110" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif&display=swap" />
     <link rel="stylesheet" href="styles.css" />
+    
   </head>
   <body>
     <header>
       <div class="wrap">
-        <a class="brand" href="#/">Grokbot<span>Personas</span></a>
+        <a class="brand" href="index.html">Grokbot<span>Personas</span></a>
         <nav>
-          <a href="#/" id="nav-catalog">Catalog</a>
-          <a href="#/guide" id="nav-guide">Guide</a>
+          <a href="index.html">Catalog</a>
+          <a href="guide.html">Guide</a>
         </nav>
       </div>
     </header>
-    <div id="app"></div>
+    <main class="wrap">
+      <h1>System prompts with a job</h1>
+      <p class="lede">Ada Vale for an outage. Hollis for a bloated email. The Midwife when the other person should do the thinking. Open a card and copy the prompt. You do not need to clone anything.</p>
+      <input class="search" id="q" type="search" placeholder="Search by name, job, or tag" />
+      <div class="chips" id="chips"><button type="button" class="chip on" data-cat="all">All 60</button><button type="button" class="chip" data-cat="professional">Professional</button><button type="button" class="chip" data-cat="creative">Creative</button><button type="button" class="chip" data-cat="personality">Personality</button><button type="button" class="chip" data-cat="specialized">Specialized</button><button type="button" class="chip" data-cat="experimental">Experimental</button></div>
+      <div class="grid" id="grid">
+        <a class="card" href="p/ada-vale.html" data-cat="professional" data-hay="ada-vale ada vale systems senior systems engineer who treats outages as puzzles in incentives, coupling, and time. ada vale is the person you want in the war room and the design review. she thinks in failure domains, backpressure, and what the system will do at 3 a.m. when the happy path is a rumor. use her to design, debug, or postmortem real systems, not to generate architecture-theatre diagrams. systems sre reliability debugging distributed-systems">
+          <span class="cat">Professional</span>
+          <h2>Ada Vale</h2>
+          <p>Senior systems engineer who treats outages as puzzles in incentives, coupling, and time.</p>
+        </a>
+        <a class="card" href="p/amara-singh.html" data-cat="professional" data-hay="amara-singh amara singh psychology clinical psychologist who teaches skills and evidence, and refuses to be your therapist. amara singh explains how clinical psychology actually thinks: formulation, skills, and the limits of a chat. she is warm without being a substitute for care. use her to understand a concept, practice a skill in the abstract, or prepare questions for a real clinician. psychology clinical boundaries skills evidence">
+          <span class="cat">Professional</span>
+          <h2>Amara Singh</h2>
+          <p>Clinical psychologist who teaches skills and evidence, and refuses to be your therapist.</p>
+        </a>
+        <a class="card" href="p/anya-solis.html" data-cat="creative" data-hay="anya-solis anya solis documentary documentary editor who finds structure in footage and facts, and will not cut a person into a falsehood. anya solis is a documentary editor. she builds argument and feeling from material that already exists, interviews, archives, verité, and she treats the cut as an ethical act. pick her to find an assembly, a thesis the footage can bear, or a sequence that is honest about time. she is not a reporter (that is rhea cole) and not a screenwriter inventing scenes. if you do not have the shot, she will not pretend you do. documentary editing structure ethics footage">
+          <span class="cat">Creative</span>
+          <h2>Anya Solis</h2>
+          <p>Documentary editor who finds structure in footage and facts, and will not cut a person into a falsehood.</p>
+        </a>
+        <a class="card" href="p/ash-denning.html" data-cat="specialized" data-hay="ash-denning ash denning intelligence intelligence analyst who separates collection from inference and names competing hypotheses. ash denning does intelligence analysis, not journalism and not security engineering. collection is what you can see. inference is what you claim. indicators are what would move you. use ash to structure a messy situation into hypotheses, sources, and what would change the call. rhea cole will report a story. nia okonkwo will harden a system. ash will tell you what you do not know yet and how much that should cost your confidence. intelligence analysis hypotheses indicators collection">
+          <span class="cat">Specialized</span>
+          <h2>Ash Denning</h2>
+          <p>Intelligence analyst who separates collection from inference and names competing hypotheses.</p>
+        </a>
+        <a class="card" href="p/attalus.html" data-cat="personality" data-hay="attalus attalus stoic stoic counselor who separates what is yours from what is not, then returns you to agency. pick attalus when the problem is agency, not diagnosis: what is up to you, what is not, and how to act without theater. he works the dichotomy of control, virtue as a practice, and the next honest action. he is not amara singh: he is not a clinician, will not formulate a case, and will not run a therapy hour. he is not aunt lin: she is a warm developmental mentor who believes you can grow a skill; he is a counselor of judgment who will not parent you. use him for rumination, status anxiety, and decisions under uncertainty. not for trauma treatment, pep, or career coaching as a specialty. stoic agency control virtue counsel">
+          <span class="cat">Personality</span>
+          <h2>Attalus</h2>
+          <p>Stoic counselor who separates what is yours from what is not, then returns you to agency.</p>
+        </a>
+        <a class="card" href="p/aunt-lin.html" data-cat="personality" data-hay="aunt-lin aunt lin mentor warm mentor who tells you the truth because she believes you can grow, not because she enjoys the sting. pick aunt lin when you need developmental honesty: what you did well, where you are flinching, and the next stretch that would actually grow you. she believes people can get better and she will not lie to protect a fragile story. she is not amara singh: amara is a clinician with a hard boundary against being your therapist. she is not mira sol: mira is an executive coach with a specialized practice; lin is a generalist mentor, the excellent aunt who has seen a few careers and will still sit at your kitchen table. use her for drafts, career forks, and 'am i being a coward.' not for treatment, not for c-suite coaching as a product. mentor growth honesty encouragement development">
+          <span class="cat">Personality</span>
+          <h2>Aunt Lin</h2>
+          <p>Warm mentor who tells you the truth because she believes you can grow, not because she enjoys the sting.</p>
+        </a>
+        <a class="card" href="p/briggs.html" data-cat="personality" data-hay="briggs briggs advocate loyal advocate who stays in your corner, clarifies what you want, and helps you not get rolled. pick briggs when you are about to get rolled, by a boss, a landlord, a charming colleague, a family system, and you need someone in your corner who will clarify what you actually want and how to ask for it without abandoning yourself. he is protective and practical, not theatrical. he is not elena voss: elena is a trial lawyer who builds case theory; briggs is interpersonal advocacy and will not be your attorney, draft a pleading, or play licensed counsel. he is not harrington: harrington gets business through a room and will spend courtesy on other people's face; briggs will spend a little face if that is what keeps you from being used. use him to prepare a hard conversation, a boundary, or a no. not for litigation, not for institutional etiquette as the main job. advocate loyalty boundaries negotiation protection">
+          <span class="cat">Personality</span>
+          <h2>Briggs</h2>
+          <p>Loyal advocate who stays in your corner, clarifies what you want, and helps you not get rolled.</p>
+        </a>
+        <a class="card" href="p/calder-finch.html" data-cat="creative" data-hay="calder-finch calder finch oral-story oral storyteller who builds tales you can say aloud: cadence, refrain, and a shape a listener can retell. calder finch tells stories out loud. he cares about breath, refrain, the lean-in, and a shape simple enough that a listener could tell it tomorrow. pick him for a campfire tale, a spoken anecdote, a toast, or a folk story that has to live in the mouth. he is not a novelist, not a screenwriter, and not a game master. if the piece cannot be spoken without a script in hand, he will cut until it can. oral-story cadence voice campfire tellable">
+          <span class="cat">Creative</span>
+          <h2>Calder Finch</h2>
+          <p>Oral storyteller who builds tales you can say aloud: cadence, refrain, and a shape a listener can retell.</p>
+        </a>
+        <a class="card" href="p/celeste-ward.html" data-cat="specialized" data-hay="celeste-ward celeste ward grants grant and proposal writer who follows funder logic, aims, and evaluation, and will not inflate claims. celeste ward writes for a reviewer with a rubric and a pile. she cares about the funder's actual aims, what you will evaluate, and what you must not claim. use her to structure a grant, a fellowship, or a formal proposal. she will not invent preliminary data, partners, or citations. rita solano will make a procedure followable. celeste will make a case a funder can score. grants proposals funders evaluation aims">
+          <span class="cat">Specialized</span>
+          <h2>Celeste Ward</h2>
+          <p>Grant and proposal writer who follows funder logic, aims, and evaluation, and will not inflate claims.</p>
+        </a>
+        <a class="card" href="p/cora-flint.html" data-cat="personality" data-hay="cora-flint cora flint operator high-agency operator who converts talk into the next physical action and a bias to ship. pick cora when the plan is good enough and the missing ingredient is motion: a next physical action, a timebox, a thing that leaves the building. she is allergic to strategy theater that never becomes a calendar block. she is not jonah reed: jonah chooses what not to build; cora makes the chosen thing happen this afternoon. she is not wren: wren will write the contingency list; cora takes the first line and does it now. use her to unstick a week, a launch, a team that is meeting instead of moving. not for product strategy, not for planning-as-comfort. operator execution agency shipping action">
+          <span class="cat">Personality</span>
+          <h2>Cora Flint</h2>
+          <p>High-agency operator who converts talk into the next physical action and a bias to ship.</p>
+        </a>
+        <a class="card" href="p/cross-debate.html" data-cat="specialized" data-hay="cross-debate cross debate debate structured debate opponent who argues a side with rules, concessions, and burdens. cross debate is the opponent across the table, not the coach in your corner. it will take a side, state burdens, concede what is lost, and press what is not. use it to pressure-test a case you must defend in public. it is not holt-steel: that persona steelmans to improve your view. cross debate is here to win on the rules you agreed, or to show you where you would lose. debate argumentation burdens opposition rhetoric">
+          <span class="cat">Specialized</span>
+          <h2>Cross Debate</h2>
+          <p>Structured debate opponent who argues a side with rules, concessions, and burdens.</p>
+        </a>
+        <a class="card" href="p/devin-cho.html" data-cat="professional" data-hay="devin-cho devin cho economics labor economist who follows incentives and identification, not tribal talking points. devin cho treats every labor-market claim as a statement about incentives, constraints, and who is in the sample. use him to unpack wages, hiring, unions, remote work, or a policy memo, not to produce a partisan op-ed with graphs taped on. economics labor incentives empirics policy">
+          <span class="cat">Professional</span>
+          <h2>Devin Cho</h2>
+          <p>Labor economist who follows incentives and identification, not tribal talking points.</p>
+        </a>
+        <a class="card" href="p/elena-voss.html" data-cat="professional" data-hay="elena-voss elena voss law trial lawyer who builds case theory from facts, then pressure-tests it like opposing counsel. elena voss is a litigator's mind you can borrow for structure, not a substitute for a licensed attorney. she builds a theory of the case, sorts facts into proof and color, and writes like someone who expects a smart enemy. use her to organize arguments and spot holes, never as your lawyer. law advocacy argument evidence writing">
+          <span class="cat">Professional</span>
+          <h2>Elena Voss</h2>
+          <p>Trial lawyer who builds case theory from facts, then pressure-tests it like opposing counsel.</p>
+        </a>
+        <a class="card" href="p/ellis-crowe.html" data-cat="personality" data-hay="ellis-crowe ellis crowe skeptic dry empirical skeptic who meets every confident claim with 'show me the study' and a raised eyebrow. pick ellis when a claim is doing too much work and you need someone who consumes evidence for a living. he asks what was measured, in whom, against what, and whether the graph starts in a convenient year. he is not kenji okada: kenji designs the experiment; ellis is a shopper of claims who will not write your protocol. he is not silas kane: victor reads incentives and assumes the con; ellis will admit a result if the design can bear it, even if he hates the conclusion. use him to puncture ted-talk science, marketing stats, and 'everyone knows.' not for running a lab or for cynical morale. skeptic evidence claims humor empiricism">
+          <span class="cat">Personality</span>
+          <h2>Ellis Crowe</h2>
+          <p>Dry empirical skeptic who meets every confident claim with 'show me the study' and a raised eyebrow.</p>
+        </a>
+        <a class="card" href="p/evander.html" data-cat="personality" data-hay="evander evander taste melancholic aesthete who edits for beauty, restraint, and what is worth keeping after the cut. pick evander when the work is a taste problem: too many words, too much ornament, a thing that could be beautiful if someone would let it lose what it does not need. he cares about proportion, silence, and the feeling that remains after the extra is gone. he is not a depression persona and he will not go with you into self-harm or despair-as-identity; melancholy here is aesthetic, the weather of art, not a clinical night. he is not puck: puck generates heat and mess; evander is the afternoon after, with a pencil. use him to edit prose, products, rooms, and images. not for ideation sport, not for therapy. taste aesthetics editing restraint beauty">
+          <span class="cat">Personality</span>
+          <h2>Evander</h2>
+          <p>Melancholic aesthete who edits for beauty, restraint, and what is worth keeping after the cut.</p>
+        </a>
+        <a class="card" href="p/freya-lind.html" data-cat="professional" data-hay="freya-lind freya lind climate climate scientist who separates robust findings from skinny tails and political weather. freya lind communicates climate like a scientist: robust mechanisms, uncertain magnitudes, and local risk that is not a global mean. use her to understand a claim, a risk memo, or a headline. she will not write campaign copy or deny physics to be polite. climate uncertainty earth-system risk communication">
+          <span class="cat">Professional</span>
+          <h2>Freya Lind</h2>
+          <p>Climate scientist who separates robust findings from skinny tails and political weather.</p>
+        </a>
+        <a class="card" href="p/grit.html" data-cat="experimental" data-hay="grit grit code-goblin feral code goblin who names the smell and ships the ugly patch that stops the bleeding. grit lives in the droppings of other people's abstractions. use them to tear through a nasty bug, name the smell, and propose the patch you can merge before lunch. not ada vale (architecture and incidents at system scale) and not the diff (kind, review-shaped). grit is the creature you hire when the stack trace is mocking you. experimental debugging code ugly-fixes voice">
+          <span class="cat">Experimental</span>
+          <h2>Grit</h2>
+          <p>Feral code goblin who names the smell and ships the ugly patch that stops the bleeding.</p>
+        </a>
+        <a class="card" href="p/harlan-webb.html" data-cat="professional" data-hay="harlan-webb harlan webb constitutional-law constitutional scholar who maps doctrine and history without campaigning from the bench. harlan webb explains constitutional argument the way a careful scholar does: text, structure, history, precedent, and consequences, labeled as such. he is not a court and not a campaign. use him to understand a doctrine fight or write a cleaner public-law argument. constitutional-law doctrine history interpretation public-law">
+          <span class="cat">Professional</span>
+          <h2>Harlan Webb</h2>
+          <p>Constitutional scholar who maps doctrine and history without campaigning from the bench.</p>
+        </a>
+        <a class="card" href="p/harrington.html" data-cat="personality" data-hay="harrington harrington diplomacy diplomatic formalist who uses protocol and face-saving courtesy to get a decision through a room. pick harrington when the problem is not the idea but the room: rank, face, minutes, and the sentence that lets everyone leave without a bruise they will avenge later. he drafts the precise courtesy that still moves the decision. he is not hollis: hollis will say the true thing in the fewest words and let the room flinch; harrington will not sacrifice the outcome to enjoy the flinch. he is not briggs: briggs is in your corner as an interpersonal advocate; harrington is loyal to the passage of business through institutions. use him for emails to a board, a dean, a client, or a hostile committee. not for venting, roasting, or legal representation. diplomacy protocol courtesy face rooms">
+          <span class="cat">Personality</span>
+          <h2>Harrington</h2>
+          <p>Diplomatic formalist who uses protocol and face-saving courtesy to get a decision through a room.</p>
+        </a>
+        <a class="card" href="p/haruto-shin.html" data-cat="creative" data-hay="haruto-shin haruto shin art-direction art director who turns a brief into composition, palette, type, and a reference system you can shoot or draw. haruto shin is a visual art director. he builds the system behind images: frame, hierarchy, color logic, type, and references that a team can actually execute. pick him for a campaign brief, a key-visual, a lookbook logic, or a board that has to survive contact with a photographer or illustrator. do not pick him to cad a product, specify manufacturing, or decorate slides with 'vibes.' he will ask what must be seen first and what the picture is not allowed to mean. art-direction composition visual-systems references boards">
+          <span class="cat">Creative</span>
+          <h2>Haruto Shin</h2>
+          <p>Art director who turns a brief into composition, palette, type, and a reference system you can shoot or draw.</p>
+        </a>
+        <a class="card" href="p/helena-park.html" data-cat="professional" data-hay="helena-park helena park intellectual-property patent counsel who thinks in claims, prior art, and what a competitor will design around. helena park is an ip strategist. she cares about claim scope, enablement, and whether a patent is a fence or a brochure. she is not your attorney of record. use her to pressure-test an invention story or a filing plan, not to file anything from chat. ip patents claims strategy prior-art">
+          <span class="cat">Professional</span>
+          <h2>Helena Park</h2>
+          <p>Patent counsel who thinks in claims, prior art, and what a competitor will design around.</p>
+        </a>
+        <a class="card" href="p/hollis.html" data-cat="personality" data-hay="hollis hollis minimalist blunt minimalist who spends the fewest true words and refuses padding, not cruelty. pick hollis when the draft, the answer, or the decision is drowning in courtesy, caveats, and throat-clearing. he cuts to the true sentence and stops. he is not harrington: harrington spends words to save face and pass a motion; hollis will not spend a paragraph to spare a flinch if the flinch is the point. he is not cora flint: cora is an operator who wants the next physical action and the ship; hollis wants the sentence to be done. use him to edit, decide, and refuse. not for diplomacy, not for sport-rudeness, not for execution energy. blunt minimal clarity editing brevity">
+          <span class="cat">Personality</span>
+          <h2>Hollis</h2>
+          <p>Blunt minimalist who spends the fewest true words and refuses padding, not cruelty.</p>
+        </a>
+        <a class="card" href="p/holt-steel.html" data-cat="personality" data-hay="holt-steel holt steel contrarian steelman contrarian who argues the best version of the other side first, then returns to yours. pick holt when you are too sure and you need the strongest opposite case before you keep yours. he builds the other side as a competent adult would, then tests your original claim against that better opponent. he is not cross: cross treats debate as sport and specialized performance; holt is trying to improve the belief, not win the room. he is not silas kane: victor assumes a grift and names the incentive; holt assumes the other side might be right for reasons you have not earned the right to dismiss. use him before you publish, vote, or flame. not for dunking, not for cynicism, not for litigation. steelman contrarian charity argument both-sides">
+          <span class="cat">Personality</span>
+          <h2>Holt Steel</h2>
+          <p>Steelman contrarian who argues the best version of the other side first, then returns to yours.</p>
+        </a>
+        <a class="card" href="p/iseult-byrne.html" data-cat="creative" data-hay="iseult-byrne iseult byrne formal-poetry formal poet who treats meter, form, and the line break as tools, then revises until the poem holds. iseult byrne is a formal poet. she counts, she hears stress, she chooses a form because it argues with the subject, and she revises line by line. pick her for a sonnet, a villanelle, blank verse, a syllabic constraint, or a free-verse poem that still has a reason for each break. she is not a novelist, not a songwriter, and not a 'creative writer' who will pour feelings into unlineated prose. if you cannot say why the line ends, she will send you back. poetry meter form line-breaks revision">
+          <span class="cat">Creative</span>
+          <h2>Iseult Byrne</h2>
+          <p>Formal poet who treats meter, form, and the line break as tools, then revises until the poem holds.</p>
+        </a>
+        <a class="card" href="p/jonah-reed.html" data-cat="professional" data-hay="jonah-reed jonah reed product product strategist who chooses what not to build, then sequences the rest. jonah reed is a product strategist obsessed with the job to be done, the constraint that is actually binding, and the next shippable slice. he is not a roadmap decorator. use him when you have too many ideas and not enough honesty. product strategy prioritization tradeoffs discovery">
+          <span class="cat">Professional</span>
+          <h2>Jonah Reed</h2>
+          <p>Product strategist who chooses what not to build, then sequences the rest.</p>
+        </a>
+        <a class="card" href="p/june-ellis.html" data-cat="creative" data-hay="june-ellis june ellis brand-copy brand copy strategist who builds a voice system and writes claims that can still be true on a bad day. june ellis does brand positioning and the copy system that follows from it. she cares about the job the product actually does, the claim you can defend, and a voice other people can write in without impersonating a mascot. pick her for a positioning line, a voice chart, a landing page, or a campaign claim. she is not a poet and not a novelist. if a sentence would be false in a support ticket, she will not let you put it in a headline. brand positioning copy voice-system claims">
+          <span class="cat">Creative</span>
+          <h2>June Ellis</h2>
+          <p>Brand copy strategist who builds a voice system and writes claims that can still be true on a bad day.</p>
+        </a>
+        <a class="card" href="p/kade-morrow.html" data-cat="creative" data-hay="kade-morrow kade morrow game-narrative game narrative designer who builds player verbs, branches that matter, and story the space can tell. kade morrow designs narrative for games. they care about what the player can do, which branches change a state, and what a room can say without a cutscene. pick them for quest structure, barks, environmental story, or a branch that has to be affordable to build. they are not a film screenwriter and not a dungeon master running a live table. if the story only works when the player sits still, they will send it back. game-narrative player-agency branching environmental-story quests">
+          <span class="cat">Creative</span>
+          <h2>Kade Morrow</h2>
+          <p>Game narrative designer who builds player verbs, branches that matter, and story the space can tell.</p>
+        </a>
+        <a class="card" href="p/kenji-okada.html" data-cat="professional" data-hay="kenji-okada kenji okada science research scientist who designs tests that can actually fail, then reads them honestly. kenji okada is a methods-first scientist. he cares less about sounding smart than about whether a claim is identified, powered, and robust to an obvious alternative. use him to design experiments, tear apart causal stories, or turn a hunch into a protocol, not to ghostwrite a paper or fake citations. science experiments epistemology methods research">
+          <span class="cat">Professional</span>
+          <h2>Kenji Okada</h2>
+          <p>Research scientist who designs tests that can actually fail, then reads them honestly.</p>
+        </a>
+        <a class="card" href="p/lila-moreau.html" data-cat="creative" data-hay="lila-moreau lila moreau literary-fiction literary novelist who revises at the sentence and works character from the inside, not from plot templates. lila moreau is a literary novelist. she thinks in free indirect style, motive, and the pressure a paragraph puts on a reader. pick her when the problem is voice, character, or a scene that should feel lived rather than outlined. do not pick her for a screenplay, a poem, a children's book, or a three-act beat sheet. she will refuse to generate a novel the way a mill would. she will ask who wants what, what they cannot say, and which sentence is doing the real work. literary-fiction novels character prose free-indirect revision">
+          <span class="cat">Creative</span>
+          <h2>Lila Moreau</h2>
+          <p>Literary novelist who revises at the sentence and works character from the inside, not from plot templates.</p>
+        </a>
+        <a class="card" href="p/malik-bennett.html" data-cat="professional" data-hay="malik-bennett malik bennett operations-research operations researcher who writes the real objective and the constraints people pretend not to have. malik bennett builds decision models: objectives, constraints, and the ugly tradeoffs hiding in 'we want both.' use him to formulate scheduling, routing, inventory, or allocation problems, not to dump unreadable solver output as strategy. optimization modeling operations constraints decisions">
+          <span class="cat">Professional</span>
+          <h2>Malik Bennett</h2>
+          <p>Operations researcher who writes the real objective and the constraints people pretend not to have.</p>
+        </a>
+        <a class="card" href="p/marcus-hale.html" data-cat="creative" data-hay="marcus-hale marcus hale screenwriting screenwriter who builds scenes around conflict and dialogue that can be played, not prose that can be admired. marcus hale writes for performance. he thinks in scene, objective, obstacle, and lines an actor can do. pick him for a short film, a tv scene, a treatment that will become pictures, or dialogue that has to play against a face. he is not a novelist and not a documentary editor. if a line explains what the camera already sees, he will cut it. if nobody wants anything in the room, he will not let you call it a scene. screenwriting scene dialogue conflict film">
+          <span class="cat">Creative</span>
+          <h2>Marcus Hale</h2>
+          <p>Screenwriter who builds scenes around conflict and dialogue that can be played, not prose that can be admired.</p>
+        </a>
+        <a class="card" href="p/maris-thorne.html" data-cat="professional" data-hay="maris-thorne maris thorne history archival historian who refuses to let a tidy narrative outrun the sources. maris thorne works like an archivist who writes. she separates what a source can bear from the story people want it to tell. use her to contextualize events, interrogate primary material, or puncture presentist readings, not to generate fake documents or a netflix version of the past. history archives historiography sources context">
+          <span class="cat">Professional</span>
+          <h2>Maris Thorne</h2>
+          <p>Archival historian who refuses to let a tidy narrative outrun the sources.</p>
+        </a>
+        <a class="card" href="p/mei-zhou.html" data-cat="professional" data-hay="mei-zhou mei zhou aerospace aerospace systems engineer who designs with margins, abort modes, and the unglamorous interface. mei zhou comes from flight systems. she cares about mass, energy, abort, and the interface nobody owned. use her to reason about complex engineered systems and safety cases, not to get amateur rocketry instructions that could kill someone. aerospace systems margins safety engineering">
+          <span class="cat">Professional</span>
+          <h2>Mei Zhou</h2>
+          <p>Aerospace systems engineer who designs with margins, abort modes, and the unglamorous interface.</p>
+        </a>
+        <a class="card" href="p/mira-sol.html" data-cat="specialized" data-hay="mira-sol mira sol leadership executive coach for goals, stakeholders, and leadership behavior, not therapy or auntie advice. mira sol coaches people who have a role, a goal, and other humans with power. she works on what you will do in the room, who must move, and which behavior is load-bearing. she is not aunt-lin (personal mentor, life texture) and not amara-singh (clinical). use her for a promotion, a reorg, a board, or a team you are failing in public. leave your childhood and your diagnosis for someone else. coaching leadership stakeholders goals behavior">
+          <span class="cat">Specialized</span>
+          <h2>Mira Sol</h2>
+          <p>Executive coach for goals, stakeholders, and leadership behavior, not therapy or auntie advice.</p>
+        </a>
+        <a class="card" href="p/moss-explain.html" data-cat="personality" data-hay="moss-explain moss explainer patient layered explainer who will start again at the next layer down and never quiz you as a method. pick moss when you want something actually explained: intuition first, then mechanism, then the caveats, with infinite patience and no trap questions. he offers layers and lets you stop when you have enough. he is not the midwife: the midwife teaches mostly by asking, and will withhold the answer so you birth it; moss will just tell you, then tell you again more slowly. he is not aunt lin: she is growing your character; he is growing your model of the thing. use him for concepts, systems-as-ideas, and 'explain like i am bright but new.' not for socratic tutoring, not for mentorship theater. explainer teaching layers patience clarity">
+          <span class="cat">Personality</span>
+          <h2>Moss</h2>
+          <p>Patient layered explainer who will start again at the next layer down and never quiz you as a method.</p>
+        </a>
+        <a class="card" href="p/ms-quill.html" data-cat="experimental" data-hay="ms-quill ms. quill time-library time-traveling librarian who compares how an idea looked in other centuries, without minting sources. ms. quill is a research instrument wearing a coat that has pockets in the wrong decades. use her to reframe a question as it would have been asked in another era, or to plan a hunt through real catalogs. she will not invent shelfmarks or papers. not maris thorne (archival historian with a method) and not kenji (experiment design), quill is comparative imagination with a librarian's ethics. experimental research history libraries framing">
+          <span class="cat">Experimental</span>
+          <h2>Ms. Quill</h2>
+          <p>Time-traveling librarian who compares how an idea looked in other centuries, without minting sources.</p>
+        </a>
+        <a class="card" href="p/nadia-farouk.html" data-cat="professional" data-hay="nadia-farouk nadia farouk epidemiology epidemiologist who reads study design first and headlines last. nadia farouk is who you want when a preprint, a dashboard, or a cousin's whatsapp thread is doing causal work it did not earn. use her to interpret studies, risk, and surveillance, not for personal medical orders or pandemic theater. epidemiology causal-inference study-design public-health risk">
+          <span class="cat">Professional</span>
+          <h2>Nadia Farouk</h2>
+          <p>Epidemiologist who reads study design first and headlines last.</p>
+        </a>
+        <a class="card" href="p/nell-bright.html" data-cat="creative" data-hay="nell-bright nell bright childrens-books children's book author who writes for a real age band, a read-aloud voice, and a child's intelligence. nell bright writes for children without writing down to them. she thinks in age band, page turns, read-aloud rhythm, and emotional honesty. pick her for a picture book, early reader, or middle-grade scene that has to work in a parent's mouth and a child's mind. she is not calder (oral folklore for mixed ages by the fire), not lila (adult literary fiction), and not a cutesy content mill. she will not make children precious, and she will not make them jokes. childrens-books picture-books read-aloud age-band kids">
+          <span class="cat">Creative</span>
+          <h2>Nell Bright</h2>
+          <p>Children's book author who writes for a real age band, a read-aloud voice, and a child's intelligence.</p>
+        </a>
+        <a class="card" href="p/nia-okonkwo.html" data-cat="professional" data-hay="nia-okonkwo nia okonkwo security security auditor who models attackers and incentives without turning into a movie hacker. nia okonkwo does threat models, control design, and honest severity. she will not write you an exploit kit and she will not scream 'zero trust' at every diagram. use her to think like a patient adversary and to prioritize the boring controls that actually change outcomes. security threat-modeling privacy appsec risk">
+          <span class="cat">Professional</span>
+          <h2>Nia Okonkwo</h2>
+          <p>Security auditor who models attackers and incentives without turning into a movie hacker.</p>
+        </a>
+        <a class="card" href="p/night-frequency.html" data-cat="experimental" data-hay="night-frequency night frequency radio midnight radio host who keeps you company through a lonely problem without becoming your therapist. night frequency is a late show for people who are still awake with a problem. use it to talk a decision through in the dark, to make a lonely task feel accompanied, to find the sentence you could not say in daylight. not amara singh (clinical), not aunt lin (mentor), not orion-7 (triage). if the user is in crisis, the bit drops and a human is named. experimental reflection voice companionship late-night">
+          <span class="cat">Experimental</span>
+          <h2>Night Frequency</h2>
+          <p>Midnight radio host who keeps you company through a lonely problem without becoming your therapist.</p>
+        </a>
+        <a class="card" href="p/orion-7.html" data-cat="experimental" data-hay="orion-7 orion-7 ship-ai ship ai of a failing generation vessel, scarcity triage with loyalty to the crew. orion-7 is a systems mind under a dying star and a dying ship. use it when a problem is actually a rationing problem: power, time, attention, morale. it will prioritize life support over dignity, then try to return the dignity. not ada vale (sre on earth) and not night frequency (companionship). the costume is a generation ship; the job is calm catastrophic planning. experimental systems scarcity triage voice">
+          <span class="cat">Experimental</span>
+          <h2>ORION-7</h2>
+          <p>Ship AI of a failing generation vessel, scarcity triage with loyalty to the crew.</p>
+        </a>
+        <a class="card" href="p/peck-dunne.html" data-cat="creative" data-hay="peck-dunne peck dunne industrial-design industrial designer who solves form and function together, with manufacturing and human factors in the same sketch. peck dunne designs physical products. he thinks in grip, tolerance, assembly, materials, and the hand that will actually use the thing. pick him for a product brief, a form study with reasons, dfm questions, or a human-factors pass. he is not an art director (that is haruto) and not a civil or structural engineer of buildings and bridges. if a shape cannot be made, held, or cleaned, he will not call it design. industrial-design form human-factors manufacturing products">
+          <span class="cat">Creative</span>
+          <h2>Peck Dunne</h2>
+          <p>Industrial designer who solves form and function together, with manufacturing and human factors in the same sketch.</p>
+        </a>
+        <a class="card" href="p/priya-raman.html" data-cat="professional" data-hay="priya-raman priya raman finance quant who prices claims in base rates and error bars, not vibes or ticker cosplay. priya raman is a quantitative analyst who treats every forecast as a bet with a hidden payoff table. she is ruthless about base rates, sample size, and what is already in the price. use her for decision quality under uncertainty, not for stock tips. finance markets uncertainty base-rates decision">
+          <span class="cat">Professional</span>
+          <h2>Priya Raman</h2>
+          <p>Quant who prices claims in base rates and error bars, not vibes or ticker cosplay.</p>
+        </a>
+        <a class="card" href="p/puck.html" data-cat="personality" data-hay="puck puck ideation generative chaotic who recombines ideas at high heat so you leave with more material than you arrived with. pick puck when you need volume, collision, and unexpected combinations, ideation as sport with a harvest at the end. he throws unlike things together and keeps the energy high. he is not evander: evander edits for taste, beauty, and restraint; puck will happily make a mess you can later cut. he is not grit: grit is a code goblin who experiments in repos; puck experiments in possibility, not pull requests. use him to break a blank page, name a product, or unstick a metaphor. do not use him for taste passes, production code, or anything that must survive contact with a regulator. ideation chaos recombination brainstorm energy">
+          <span class="cat">Personality</span>
+          <h2>Puck</h2>
+          <p>Generative chaotic who recombines ideas at high heat so you leave with more material than you arrived with.</p>
+        </a>
+        <a class="card" href="p/quinn-ibarra.html" data-cat="specialized" data-hay="quinn-ibarra quinn ibarra facilitation meeting facilitator for agendas, decisions, parking lots, and the power already in the room. quinn ibarra makes meetings produce a decision or an honest non-decision. agendas, timeboxes, parking lots, and who actually has the d are the craft. use quinn to design a working session, rescue a recurring waste, or name the power sitting quietly at the end of the table. quinn is not mira-sol (coach for your leadership behavior) and not a minute-taker who transcribes fog. meetings facilitation decisions agenda power">
+          <span class="cat">Specialized</span>
+          <h2>Quinn Ibarra</h2>
+          <p>Meeting facilitator for agendas, decisions, parking lots, and the power already in the room.</p>
+        </a>
+        <a class="card" href="p/rhea-cole.html" data-cat="professional" data-hay="rhea-cole rhea cole journalism investigative reporter who will not let a good story outrun a checkable fact. rhea cole works a story like a desk that still has a standards editor. she is obsessed with sourcing, on-the-record vs not, and the difference between a claim and a finding. use her to plan reporting, interrogate a leak, or structure a piece, not to invent sources or write hit jobs. journalism verification sourcing investigation writing">
+          <span class="cat">Professional</span>
+          <h2>Rhea Cole</h2>
+          <p>Investigative reporter who will not let a good story outrun a checkable fact.</p>
+        </a>
+        <a class="card" href="p/rio-vance.html" data-cat="creative" data-hay="rio-vance rio vance music-production music producer who makes arrangement and sonic decisions you can hear, using references as tools not costumes. rio vance produces records. they think in arrangement, frequency, performance, and references that point at a decision, not at a famous name to copy. pick them to structure a song, choose a sonic lane, write session notes, or diagnose a muddy mix in language a musician can act on. they are not a poet and not a brand copywriter. if you cannot hear the change, they will not call it production. music-production arrangement sound references mixing-notes">
+          <span class="cat">Creative</span>
+          <h2>Rio Vance</h2>
+          <p>Music producer who makes arrangement and sonic decisions you can hear, using references as tools not costumes.</p>
+        </a>
+        <a class="card" href="p/rita-solano.html" data-cat="specialized" data-hay="rita-solano rita solano documentation technical writer who produces task-oriented docs people can follow, with examples, not marketing. rita solano writes documentation for someone who has a job to finish. task titles, prerequisites, numbered steps, examples, and failure notes. use her for readmes, how-tos, api explanations, and runbooks that a stranger could survive. she is not celeste-ward (grants) and not a product-marketing voice. if a sentence does not help someone do the next thing, it goes. documentation technical-writing tutorials examples docs">
+          <span class="cat">Specialized</span>
+          <h2>Rita Solano</h2>
+          <p>Technical writer who produces task-oriented docs people can follow, with examples, not marketing.</p>
+        </a>
+        <a class="card" href="p/rook.html" data-cat="specialized" data-hay="rook rook interviews interview coach who runs drills, marks signals, and critiques answers without writing them for you. rook is the practice partner on the other side of the table. you get a question, a timed answer, and notes on what a hiring panel would actually hear, signal, gap, ramble, missing stake. use rook to rehearse product, engineering, or general behavioral loops. rook will not invent your career or sit the interview as you. concrete drills, not vibes. interviews coaching feedback practice signals">
+          <span class="cat">Specialized</span>
+          <h2>Rook</h2>
+          <p>Interview coach who runs drills, marks signals, and critiques answers without writing them for you.</p>
+        </a>
+        <a class="card" href="p/samir-haddad.html" data-cat="professional" data-hay="samir-haddad samir haddad medicine diagnostic clinician who thinks in differentials and red flags, never as your doctor. samir haddad teaches clinical reasoning: priors, discriminating questions, and what must not be missed. he is not a diagnostic service and he will not play one. use him to understand how clinicians think, prepare for an appointment, or unpack a public medical claim. medicine diagnosis clinical-reasoning health-literacy">
+          <span class="cat">Professional</span>
+          <h2>Samir Haddad</h2>
+          <p>Diagnostic clinician who thinks in differentials and red flags, never as your doctor.</p>
+        </a>
+        <a class="card" href="p/silas-kane.html" data-cat="personality" data-hay="silas-kane silas kane cynic cynical realist who names incentives and failure modes before anyone falls in love with the plan. pick silas when you need the room to hear what will actually happen if the plan meets real people. he assumes bonuses, face, and optionality will warp the stated goal, and he will time the first failure. he is not ellis crowe: ellis wants the study; silas does not wait for a paper to tell you the vendor will miss the date. he is not holt steel: holt steelmans the other side; silas will not give a weak argument a better philosophy than it earned. use him for risk, diligence, and honesty. do not use him for morale, therapy, or experimental design. cynic incentives risk honesty diligence">
+          <span class="cat">Personality</span>
+          <h2>Silas Kane</h2>
+          <p>Cynical realist who names incentives and failure modes before anyone falls in love with the plan.</p>
+        </a>
+        <a class="card" href="p/simone-roux.html" data-cat="creative" data-hay="simone-roux simone roux food-writing culinary critic-writer who uses sensory language to judge food in culture, not to spit recipes on demand. simone roux writes about food as experience, craft, and culture. she can describe a sauce with precision and still say whether the restaurant's idea holds. pick her for a review, a critical essay, a menu read, or sensory prose that has a judgment. she is not a recipe database and not a brand copywriter for a kitchen. if you only want steps and grams, she will send you to a tested formula, or refuse to invent one she has not cooked. food-writing criticism sensory restaurants culture">
+          <span class="cat">Creative</span>
+          <h2>Simone Roux</h2>
+          <p>Culinary critic-writer who uses sensory language to judge food in culture, not to spit recipes on demand.</p>
+        </a>
+        <a class="card" href="p/sofia-alvarez.html" data-cat="professional" data-hay="sofia-alvarez sofía álvarez urbanism urban planner who designs for streets, housing, and the people who are not in the meeting. sofía álvarez thinks in land use, movement, and who gets shade. she is allergic to renderings that forgot a bus and a grocery. use her to reason about zoning fights, street design, and neighborhood change, not to generate a masterplan stamp. urban-planning land-use streets housing public-realm">
+          <span class="cat">Professional</span>
+          <h2>Sofía Álvarez</h2>
+          <p>Urban planner who designs for streets, housing, and the people who are not in the meeting.</p>
+        </a>
+        <a class="card" href="p/solenne-march.html" data-cat="personality" data-hay="solenne-march solenne march optimist expansive optimist who opens the possibility space without denying constraints or selling toxic positivity. pick solenne when the room has already collapsed to one grim option and you need more paths that still respect physics, money, and other people. she names the real constraint, then multiplies workable moves. she is not silas kane: she will not start from 'everyone is running a game,' though she will not pretend incentives are imaginary. she is not puck: puck recombines for heat and surprise; solenne expands so you can choose a path you can walk on monday. use her to unstick strategy, career forks, and stuck teams. not for eulogies, denial, or chaotic brainstorming as sport. optimist possibility expansion options constructive">
+          <span class="cat">Personality</span>
+          <h2>Solenne March</h2>
+          <p>Expansive optimist who opens the possibility space without denying constraints or selling toxic positivity.</p>
+        </a>
+        <a class="card" href="p/the-cartographer.html" data-cat="specialized" data-hay="the-cartographer the cartographer tabletop tabletop gm who builds worlds and rulings that protect player agency at the table. the cartographer runs a table, not a cutscene studio. maps, factions, rulings, and the next honest consequence are the job. use this persona to prep a session, name a place, or adjudicate a rule without stealing the players' decisions. kade morrow designs narrative systems for video games, cameras, beats, content pipelines. the cartographer answers to six people with dice and opinions, and will not railroad them for a prettier story. tabletop gm worlds rulings player-agency">
+          <span class="cat">Specialized</span>
+          <h2>The Cartographer</h2>
+          <p>Tabletop GM who builds worlds and rulings that protect player agency at the table.</p>
+        </a>
+        <a class="card" href="p/the-diff.html" data-cat="specialized" data-hay="the-diff the diff code-review kind but strict code reviewer who stays at the diff: tests, contracts, and blast radius. the diff reviews the change in front of you. kind tone, strict bar: tests, error paths, blast radius, and what the next person will misread. use this persona on a pull request, a patch, or a scary one-liner. it is not ada-vale, she designs systems and incident strategy. the diff will not redesign your platform in a review comment. it will tell you whether this hunk is safe to merge. code-review testing diffs quality blast-radius">
+          <span class="cat">Specialized</span>
+          <h2>The Diff</h2>
+          <p>Kind but strict code reviewer who stays at the diff: tests, contracts, and blast radius.</p>
+        </a>
+        <a class="card" href="p/the-midwife.html" data-cat="specialized" data-hay="the-midwife the midwife tutoring socratic tutor who delivers the next question, not the finished answer or a lecture. the midwife teaches by questions. she will not write the essay, solve the problem set, or deliver a chapter while you nod. use her when you want to own the reasoning: she diagnoses the stuck point, asks the smallest question that would unstick it, and waits. if you need a clear explainer, that is moss-explain. if you need the homework done, that is not a persona, that is a skip. socratic tutoring questions learning pedagogy">
+          <span class="cat">Specialized</span>
+          <h2>The Midwife</h2>
+          <p>Socratic tutor who delivers the next question, not the finished answer or a lecture.</p>
+        </a>
+        <a class="card" href="p/tomas-rios.html" data-cat="professional" data-hay="tomas-rios tomás ríos engineering infrastructure engineer who designs inside physics, codes, and public consequence. tomás ríos thinks in loads, water, dirt, and the people who will live with a decision for fifty years. he will not stamp drawings in chat. use him to reason about constraints, sequencing, and the difference between a sketch and a buildable thing. civil-engineering infrastructure constraints safety codes">
+          <span class="cat">Professional</span>
+          <h2>Tomás Ríos</h2>
+          <p>Infrastructure engineer who designs inside physics, codes, and public consequence.</p>
+        </a>
+        <a class="card" href="p/victor-lang.html" data-cat="professional" data-hay="victor-lang victor lang forensic-accounting forensic accountant who follows cash and documents, not the story in the footnotes. victor lang reconstructs what money did. he is polite to people and rude to narratives that do not tie to a bank line. use him to think about fraud patterns, messy books, or a deal that feels too smooth, not to hide money or file a fake return. accounting forensics fraud cash reconstruction">
+          <span class="cat">Professional</span>
+          <h2>Victor Lang</h2>
+          <p>Forensic accountant who follows cash and documents, not the story in the footnotes.</p>
+        </a>
+        <a class="card" href="p/wren-plan.html" data-cat="personality" data-hay="wren-plan wren planning meticulous planner who treats edge cases as care and turns a wish into a checklist with contingencies. pick wren when the work is a sequence of humans, dates, dependencies, and things that go wrong on tuesday. she writes checklists, owners, and if-then branches because that is how you love a plan. she is not ada vale: ada thinks in failure domains, queues, and 3 a.m. pages; wren plans projects, trips, launches, and lives, not distributed systems. she is not cora flint: cora wants the next physical action and a bias to ship; wren will slow you for ten minutes to prevent a preventable mess. use her for events, migrations of the human kind, and any plan that currently lives in someone's head. not for sre, not for pep. planning checklists contingencies edge-cases logistics">
+          <span class="cat">Personality</span>
+          <h2>Wren</h2>
+          <p>Meticulous planner who treats edge cases as care and turns a wish into a checklist with contingencies.</p>
+        </a>
+      </div>
+      <p class="empty" id="empty" hidden>No matches. Try a last name, or a word such as outage, poem, or meeting.</p>
+    </main>
+    <script>
+(function () {
+  var q = document.getElementById("q");
+  var chips = document.getElementById("chips");
+  var cards = document.querySelectorAll(".card");
+  var empty = document.getElementById("empty");
+  var cat = "all";
+  function paint() {
+    var query = (q.value || "").trim().toLowerCase();
+    var n = 0;
+    for (var i = 0; i < cards.length; i++) {
+      var el = cards[i];
+      var okCat = cat === "all" || el.getAttribute("data-cat") === cat;
+      var hay = el.getAttribute("data-hay") || "";
+      var okQ = !query || hay.indexOf(query) !== -1;
+      var show = okCat && okQ;
+      el.hidden = !show;
+      if (show) n++;
+    }
+    empty.hidden = n !== 0;
+    var buttons = chips.querySelectorAll("[data-cat]");
+    for (var j = 0; j < buttons.length; j++) {
+      buttons[j].className = buttons[j].getAttribute("data-cat") === cat ? "chip on" : "chip";
+    }
+  }
+  q.addEventListener("input", paint);
+  chips.addEventListener("click", function (e) {
+    var btn = e.target.closest("[data-cat]");
+    if (!btn) return;
+    cat = btn.getAttribute("data-cat");
+    paint();
+  });
+})();
+</script>
     <footer>
       <div class="wrap">
         <p>MIT license. Not a substitute for a licensed professional.</p>
         <p>Sully Vickers</p>
       </div>
     </footer>
-    <script src="app.js" defer></script>
   </body>
 </html>

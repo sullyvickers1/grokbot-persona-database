@@ -2,6 +2,7 @@
 import { readFileSync, readdirSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { spawnSync } from "node:child_process";
 import { parse } from "yaml";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -61,6 +62,11 @@ const fullJson = JSON.stringify(full, null, 2) + "\n";
 
 mkdirSync(join(root, "web"), { recursive: true });
 writeFileSync(join(root, "web/personas.json"), fullJson);
+
+const built = spawnSync(process.execPath, [join(root, "scripts/build-web.mjs")], {
+  stdio: "inherit",
+});
+if (built.status !== 0) process.exit(built.status ?? 1);
 
 if (existsSync(join(root, "src"))) {
   mkdirSync(join(root, "src/data"), { recursive: true });
