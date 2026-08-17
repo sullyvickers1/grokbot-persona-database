@@ -9,6 +9,8 @@ import { creative } from "./data/creative.mjs";
 import { personality } from "./data/personality.mjs";
 import { specialized } from "./data/specialized.mjs";
 import { experimental } from "./data/experimental.mjs";
+import { business } from "./data/business.mjs";
+import { businessB } from "./data/business-b.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const all = [
@@ -18,6 +20,8 @@ const all = [
   ...personality,
   ...specialized,
   ...experimental,
+  ...business,
+  ...businessB,
 ];
 
 const expected = {
@@ -26,6 +30,7 @@ const expected = {
   personality: 14,
   specialized: 10,
   experimental: 4,
+  business: 16,
 };
 
 for (const [category, count] of Object.entries(expected)) {
@@ -35,8 +40,8 @@ for (const [category, count] of Object.entries(expected)) {
   }
 }
 
-if (all.length !== 60) {
-  throw new Error(`expected 60 personas, got ${all.length}`);
+if (all.length !== 76) {
+  throw new Error(`expected 76 personas, got ${all.length}`);
 }
 
 const keep = new Map();

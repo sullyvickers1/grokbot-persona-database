@@ -1,6 +1,15 @@
 # Changelog
 
+## 1.2.0 — 2026-08-17
+
+Business desk. Sixteen operators for running a company from the catalog.
+
+- New category `business` (16): Tess Rowan and the seats she routes to.
+- Catalog total is 76. GitHub Pages remains the way to use the prompts.
+- New page: The desk.
+
 ## 1.1.0 — 2026-08-17
+
 
 Curation pass. The jobs did not change. The collection stopped looking compiled.
 

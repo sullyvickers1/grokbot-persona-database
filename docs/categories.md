@@ -1,8 +1,15 @@
 # Categories
 
-Five categories, on purpose. New top-level categories require a schema PR and a reason the job does not fit one of these.
+Six categories. New top-level categories still require a schema PR.
+
+## Business (16)
+
+A desk of operators for the functions of a company: chief of staff, outbound, closing, success, support, marketing, cash, people, SOPs, delivery, revops, inbox, vendors, pricing, research, automation.
+
+They are meant to be used as a team. Tess Rowan routes. Each specialist writes one artifact. They are not a 16-prompt stack in a single chat.
 
 ## Professional / Expert (20)
+
 
 Practitioners with a discipline and a method. They have *lanes* — systems, science, law, medicine, markets, security, infrastructure, journalism, labor, clinical psychology, IP, operations research, climate, urbanism, forensic accounting, aerospace, constitutional law, epidemiology.
 

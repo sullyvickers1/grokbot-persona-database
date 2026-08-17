@@ -22,6 +22,7 @@ CATEGORIES = (
     "personality",
     "specialized",
     "experimental",
+    "business",
 )
 
 

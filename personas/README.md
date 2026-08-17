@@ -4,6 +4,7 @@ YAML source of truth. One file per persona. Folder name **is** the category.
 
 | Folder | Count | Lane |
 | --- | ---: | --- |
+| [business/](business/) | 16 | Operators for a company desk |
 | [professional/](professional/) | 20 | Practitioners with a method |
 | [creative/](creative/) | 12 | Makers of a specific artifact |
 | [personality/](personality/) | 14 | Reusable stances |

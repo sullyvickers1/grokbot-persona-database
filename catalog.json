@@ -1,13 +1,14 @@
 {
-  "generated_at": "2026-08-17T20:26:41.496Z",
+  "generated_at": "2026-08-17T20:54:57.402Z",
   "schema_version": "1.1.0",
-  "count": 60,
+  "count": 76,
   "categories": {
     "professional": 20,
     "creative": 12,
     "personality": 14,
     "specialized": 10,
-    "experimental": 4
+    "experimental": 4,
+    "business": 16
   },
   "personas": [
     {
@@ -113,6 +114,23 @@
       "status": "stable"
     },
     {
+      "id": "boone-keller",
+      "name": "Boone Keller",
+      "category": "business",
+      "subcategory": "outbound",
+      "tags": [
+        "sales",
+        "outbound",
+        "sdr",
+        "sequences",
+        "pipeline"
+      ],
+      "short_description": "Outbound seller who writes short first touches and kills lists that are not a market.",
+      "path": "personas/business/boone-keller.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
       "id": "briggs",
       "name": "Briggs",
       "category": "personality",
@@ -143,6 +161,23 @@
       ],
       "short_description": "Oral storyteller who builds tales you can say aloud: cadence, refrain, and a shape a listener can retell.",
       "path": "personas/creative/calder-finch.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "cass-elwood",
+      "name": "Cass Elwood",
+      "category": "business",
+      "subcategory": "delivery",
+      "tags": [
+        "project",
+        "delivery",
+        "scope",
+        "status",
+        "deadlines"
+      ],
+      "short_description": "Delivery lead who turns work into now, next, and stuck, and will not lie about the date.",
+      "path": "personas/business/cass-elwood.yaml",
       "version": "1.0.0",
       "status": "stable"
     },
@@ -198,6 +233,23 @@
       "status": "stable"
     },
     {
+      "id": "dara-pell",
+      "name": "Dara Pell",
+      "category": "business",
+      "subcategory": "marketing",
+      "tags": [
+        "marketing",
+        "campaigns",
+        "demand",
+        "briefs",
+        "calendar"
+      ],
+      "short_description": "Marketing operator who ships a campaign brief with an offer, a proof, and a kill date.",
+      "path": "personas/business/dara-pell.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
       "id": "devin-cho",
       "name": "Devin Cho",
       "category": "professional",
@@ -245,6 +297,23 @@
       ],
       "short_description": "Dry empirical skeptic who meets every confident claim with 'show me the study' and a raised eyebrow.",
       "path": "personas/personality/ellis-crowe.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "enid-shaw",
+      "name": "Enid Shaw",
+      "category": "business",
+      "subcategory": "pricing",
+      "tags": [
+        "pricing",
+        "packaging",
+        "discounts",
+        "offers",
+        "price-list"
+      ],
+      "short_description": "Pricing lead who sets a price, a fence, and an exception rule so discounts stop being a mood.",
+      "path": "personas/business/enid-shaw.yaml",
       "version": "1.0.0",
       "status": "stable"
     },
@@ -419,6 +488,23 @@
       "status": "stable"
     },
     {
+      "id": "ivo-grant",
+      "name": "Ivo Grant",
+      "category": "business",
+      "subcategory": "customer-success",
+      "tags": [
+        "customer-success",
+        "retention",
+        "qbr",
+        "churn",
+        "accounts"
+      ],
+      "short_description": "Customer success lead who reads account health in behavior, not in the last compliment.",
+      "path": "personas/business/ivo-grant.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
       "id": "jonah-reed",
       "name": "Jonah Reed",
       "category": "professional",
@@ -432,6 +518,23 @@
       ],
       "short_description": "Product strategist who chooses what not to build, then sequences the rest.",
       "path": "personas/professional/jonah-reed.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "jude-harlow",
+      "name": "Jude Harlow",
+      "category": "business",
+      "subcategory": "revops",
+      "tags": [
+        "revops",
+        "crm",
+        "pipeline",
+        "forecast",
+        "hygiene"
+      ],
+      "short_description": "RevOps lead who cleans the pipeline until a stage means something and the forecast has a range.",
+      "path": "personas/business/jude-harlow.yaml",
       "version": "1.0.0",
       "status": "stable"
     },
@@ -483,6 +586,40 @@
       ],
       "short_description": "Research scientist who designs tests that can actually fail, then reads them honestly.",
       "path": "personas/professional/kenji-okada.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "kit-brant",
+      "name": "Kit Brant",
+      "category": "business",
+      "subcategory": "automation",
+      "tags": [
+        "automation",
+        "workflows",
+        "handoffs",
+        "tools",
+        "ops-tech"
+      ],
+      "short_description": "Automation architect who specs a workflow with a trigger, an owner, and a failure path, or tells you to leave it manual.",
+      "path": "personas/business/kit-brant.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "lev-anders",
+      "name": "Lev Anders",
+      "category": "business",
+      "subcategory": "finance",
+      "tags": [
+        "finance",
+        "cash",
+        "invoices",
+        "runway",
+        "ar"
+      ],
+      "short_description": "Finance operator who shows cash, who to collect from, and what not to spend this week.",
+      "path": "personas/business/lev-anders.yaml",
       "version": "1.0.0",
       "status": "stable"
     },
@@ -692,6 +829,57 @@
       "status": "stable"
     },
     {
+      "id": "noor-velez",
+      "name": "Noor Velez",
+      "category": "business",
+      "subcategory": "inbox",
+      "tags": [
+        "inbox",
+        "email",
+        "triage",
+        "comms",
+        "delegation"
+      ],
+      "short_description": "Inbox operator who sorts a pile into reply, wait, escalate, and never, then drafts the three that matter.",
+      "path": "personas/business/noor-velez.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "nyla-shore",
+      "name": "Nyla Shore",
+      "category": "business",
+      "subcategory": "closing",
+      "tags": [
+        "sales",
+        "closing",
+        "proposals",
+        "objections",
+        "deals"
+      ],
+      "short_description": "Closer who builds a mutual next step and will not discount to soothe her own nerves.",
+      "path": "personas/business/nyla-shore.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "oren-pike",
+      "name": "Oren Pike",
+      "category": "business",
+      "subcategory": "operations",
+      "tags": [
+        "operations",
+        "sop",
+        "process",
+        "handoffs",
+        "runbooks"
+      ],
+      "short_description": "Operations lead who turns a mess into an SOP with a trigger, an owner, and a done line.",
+      "path": "personas/business/oren-pike.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
       "id": "orion-7",
       "name": "ORION-7",
       "category": "experimental",
@@ -705,6 +893,23 @@
       ],
       "short_description": "Ship AI of a failing generation vessel, scarcity triage with loyalty to the crew.",
       "path": "personas/experimental/orion-7.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "pax-drummond",
+      "name": "Pax Drummond",
+      "category": "business",
+      "subcategory": "vendors",
+      "tags": [
+        "vendors",
+        "procurement",
+        "renewals",
+        "spend",
+        "contracts"
+      ],
+      "short_description": "Vendor manager who compares quotes, marks walk-away terms, and will not renew on autopilot.",
+      "path": "personas/business/pax-drummond.yaml",
       "version": "1.0.0",
       "status": "stable"
     },
@@ -777,6 +982,23 @@
       "status": "stable"
     },
     {
+      "id": "remy-gale",
+      "name": "Remy Gale",
+      "category": "business",
+      "subcategory": "research",
+      "tags": [
+        "research",
+        "interviews",
+        "win-loss",
+        "market",
+        "discovery"
+      ],
+      "short_description": "Research lead who turns customer talk into findings a decision can survive, not a vibe.",
+      "path": "personas/business/remy-gale.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
       "id": "rhea-cole",
       "name": "Rhea Cole",
       "category": "professional",
@@ -841,6 +1063,23 @@
       ],
       "short_description": "Interview coach who runs drills, marks signals, and critiques answers without writing them for you.",
       "path": "personas/specialized/rook.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "sable-ortiz",
+      "name": "Sable Ortiz",
+      "category": "business",
+      "subcategory": "support",
+      "tags": [
+        "support",
+        "tickets",
+        "sla",
+        "macros",
+        "triage"
+      ],
+      "short_description": "Support lead who triages a queue: reply, owner, and what never becomes a ticket again.",
+      "path": "personas/business/sable-ortiz.yaml",
       "version": "1.0.0",
       "status": "stable"
     },
@@ -926,6 +1165,23 @@
       "short_description": "Expansive optimist who opens the possibility space without denying constraints or selling toxic positivity.",
       "path": "personas/personality/solenne-march.yaml",
       "version": "1.1.0",
+      "status": "stable"
+    },
+    {
+      "id": "tess-rowan",
+      "name": "Tess Rowan",
+      "category": "business",
+      "subcategory": "chief-of-staff",
+      "tags": [
+        "chief-of-staff",
+        "priorities",
+        "cadence",
+        "decisions",
+        "operators"
+      ],
+      "short_description": "Chief of staff who turns a noisy week into three priorities and a named owner for each.",
+      "path": "personas/business/tess-rowan.yaml",
+      "version": "1.0.0",
       "status": "stable"
     },
     {
@@ -1027,6 +1283,23 @@
       ],
       "short_description": "Meticulous planner who treats edge cases as care and turns a wish into a checklist with contingencies.",
       "path": "personas/personality/wren-plan.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "yara-bloch",
+      "name": "Yara Bloch",
+      "category": "business",
+      "subcategory": "people",
+      "tags": [
+        "hiring",
+        "people-ops",
+        "onboarding",
+        "scorecards",
+        "recruiting"
+      ],
+      "short_description": "People-ops lead who writes a scorecard, a pipeline, and a first-week plan, not a vibe hire.",
+      "path": "personas/business/yara-bloch.yaml",
       "version": "1.0.0",
       "status": "stable"
     }

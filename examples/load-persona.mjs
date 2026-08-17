@@ -19,6 +19,7 @@ export function findPersonaPath(id) {
     "personality",
     "specialized",
     "experimental",
+    "business",
   ];
   for (const category of categories) {
     const path = join(root, "personas", category, `${id}.yaml`);

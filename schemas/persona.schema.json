@@ -82,7 +82,8 @@
         "creative",
         "personality",
         "specialized",
-        "experimental"
+        "experimental",
+        "business"
       ],
       "description": "Top-level collection. Must match the parent folder name."
     },

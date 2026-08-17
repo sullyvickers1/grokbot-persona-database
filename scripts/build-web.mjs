@@ -8,6 +8,7 @@ const personas = JSON.parse(readFileSync(join(root, "web/personas.json"), "utf8"
 const web = join(root, "web");
 
 const LABELS = {
+  business: "Business",
   professional: "Professional",
   creative: "Creative",
   personality: "Personality",
@@ -23,27 +24,35 @@ function esc(s) {
     .replace(/"/g, "\u0026quot;");
 }
 
-function page({ title, body, extraHead = "" }) {
+function jsStr(s) {
+  return JSON.stringify(String(s ?? ""));
+}
+
+function shell({ title, pathPrefix, nav, body }) {
+  const css = pathPrefix + "styles.css";
+  const icon = pathPrefix + "favicon.svg";
+  const home = pathPrefix + "index.html";
+  const guide = pathPrefix + "guide.html";
   return `<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>${esc(title)}</title>
-    <meta name="description" content="Sixty system prompts for Grok and other models. Copy one and send the real draft." />
-    <meta name="theme-color" content="#121110" />
-    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif&display=swap" />
-    <link rel="stylesheet" href="styles.css" />
-    ${extraHead}
+    <meta name="description" content="Sixty system prompts for Grok and other chat models. Open a name, copy the prompt." />
+    <meta name="theme-color" content="#10100f" />
+    <link rel="icon" href="${icon}" type="image/svg+xml" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&family=Instrument+Serif&display=swap" />
+    <link rel="stylesheet" href="${css}" />
   </head>
   <body>
     <header>
       <div class="wrap">
-        <a class="brand" href="index.html">Grokbot<span>Personas</span></a>
+        <a class="brand" href="${home}">Grokbot<small>Persona catalog</small></a>
         <nav>
-          <a href="index.html">Catalog</a>
-          <a href="guide.html">Guide</a>
+          <a href="${home}"${nav === "catalog" ? ' aria-current="page"' : ""}>Catalog</a>
+          <a href="${pathPrefix}desk.html"${nav === "desk" ? ' aria-current="page"' : ""}>The desk</a>
+          <a href="${guide}"${nav === "guide" ? ' aria-current="page"' : ""}>How to use</a>
         </nav>
       </div>
     </header>
@@ -51,7 +60,7 @@ function page({ title, body, extraHead = "" }) {
     <footer>
       <div class="wrap">
         <p>MIT license. Not a substitute for a licensed professional.</p>
-        <p>Sully Vickers</p>
+        <p><a href="https://github.com/sullyvickers1/grokbot-persona-database">Source</a></p>
       </div>
     </footer>
   </body>
@@ -62,8 +71,7 @@ function page({ title, body, extraHead = "" }) {
 const chips = [
   `<button type="button" class="chip on" data-cat="all">All ${personas.length}</button>`,
   ...Object.entries(LABELS).map(
-    ([k, label]) =>
-      `<button type="button" class="chip" data-cat="${k}">${label}</button>`,
+    ([k, label]) => `<button type="button" class="chip" data-cat="${k}">${label}</button>`,
   ),
 ].join("");
 
@@ -72,11 +80,18 @@ const cards = personas
     const hay = [p.id, p.name, p.subcategory, p.short_description, p.description, ...(p.tags || [])]
       .join(" ")
       .toLowerCase();
-    return `<a class="card" href="p/${esc(p.id)}.html" data-cat="${esc(p.category)}" data-hay="${esc(hay)}">
-          <span class="cat">${esc(LABELS[p.category] || p.category)}</span>
-          <h2>${esc(p.name)}</h2>
-          <p>${esc(p.short_description)}</p>
-        </a>`;
+    return `<article class="card" data-cat="${esc(p.category)}" data-hay="${esc(hay)}">
+          <a href="p/${esc(p.id)}.html">
+            <span class="cat">${esc(LABELS[p.category] || p.category)}</span>
+            <h2>${esc(p.name)}</h2>
+            <p class="blurb">${esc(p.short_description)}</p>
+          </a>
+          <div class="card-actions">
+            <button type="button" class="copy" data-copy="${esc(p.id)}">Copy prompt</button>
+            <a class="open" href="p/${esc(p.id)}.html">Open</a>
+          </div>
+          <textarea hidden id="src-${esc(p.id)}">${esc(p.system_prompt)}</textarea>
+        </article>`;
   })
   .join("\n        ");
 
@@ -86,6 +101,7 @@ const filterScript = `<script>
   var chips = document.getElementById("chips");
   var cards = document.querySelectorAll(".card");
   var empty = document.getElementById("empty");
+  var count = document.getElementById("count");
   var cat = "all";
   function paint() {
     var query = (q.value || "").trim().toLowerCase();
@@ -94,12 +110,12 @@ const filterScript = `<script>
       var el = cards[i];
       var okCat = cat === "all" || el.getAttribute("data-cat") === cat;
       var hay = el.getAttribute("data-hay") || "";
-      var okQ = !query || hay.indexOf(query) !== -1;
-      var show = okCat && okQ;
+      var show = okCat && (!query || hay.indexOf(query) !== -1);
       el.hidden = !show;
       if (show) n++;
     }
     empty.hidden = n !== 0;
+    count.textContent = n === cards.length ? cards.length + " personas" : n + " of " + cards.length;
     var buttons = chips.querySelectorAll("[data-cat]");
     for (var j = 0; j < buttons.length; j++) {
       buttons[j].className = buttons[j].getAttribute("data-cat") === cat ? "chip on" : "chip";
@@ -112,14 +128,30 @@ const filterScript = `<script>
     cat = btn.getAttribute("data-cat");
     paint();
   });
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest("[data-copy]");
+    if (!btn) return;
+    var id = btn.getAttribute("data-copy");
+    var src = document.getElementById("src-" + id);
+    if (!src) return;
+    navigator.clipboard.writeText(src.value).then(function () {
+      btn.textContent = "Copied";
+      setTimeout(function () { btn.textContent = "Copy prompt"; }, 1400);
+    });
+  });
 })();
 </script>`;
 
 const indexBody = `<main class="wrap">
-      <h1>System prompts with a job</h1>
-      <p class="lede">Ada Vale for an outage. Hollis for a bloated email. The Midwife when the other person should do the thinking. Open a card and copy the prompt. You do not need to clone anything.</p>
-      <input class="search" id="q" type="search" placeholder="Search by name, job, or tag" />
-      <div class="chips" id="chips">${chips}</div>
+      <section class="hero">
+        <h1>Copy a prompt. Staff a desk.</h1>
+        <p class="lede">Seventy-six working voices. Sixteen of them are a company: sales, cash, hiring, support, delivery. Open a name. Copy the system prompt. Paste it into Grok. You do not install anything.</p>
+      </section>
+      <div class="toolbar">
+        <input class="search" id="q" type="search" placeholder="Search Ada, outage, poem, review" />
+        <div class="chips" id="chips">${chips}</div>
+      </div>
+      <p class="count" id="count">${personas.length} personas</p>
       <div class="grid" id="grid">
         ${cards}
       </div>
@@ -129,18 +161,20 @@ const indexBody = `<main class="wrap">
 
 writeFileSync(
   join(web, "index.html"),
-  page({ title: "Grokbot Personas", body: indexBody }),
+  shell({ title: "Grokbot Personas", pathPrefix: "", nav: "catalog", body: indexBody }),
 );
 
-const guideBody = `<main class="wrap" style="max-width:40rem">
-      <h1>How to use a persona</h1>
-      <p class="lede">Pick the persona whose job matches the work in front of you. Do not combine two prompts. Do not choose by how interesting the name sounds.</p>
+const guideBody = `<main class="wrap">
+      <section class="hero">
+        <h1>How to use a persona</h1>
+        <p class="lede">This catalog is the product. You do not clone the repository. You do not run anything locally.</p>
+      </section>
       <section class="section">
         <h2>In a chat</h2>
         <ul>
-          <li>Copy the system prompt.</li>
-          <li>Paste it as the system message.</li>
-          <li>Start from the temperature listed on the persona page.</li>
+          <li>Find the persona whose job matches the work in front of you.</li>
+          <li>Click Copy prompt.</li>
+          <li>Paste it as the system message in Grok or any chat API.</li>
           <li>Send the logs, draft, or table you actually have.</li>
         </ul>
       </section>
@@ -148,17 +182,20 @@ const guideBody = `<main class="wrap" style="max-width:40rem">
         <h2>Limits</h2>
         <ul>
           <li>These are not a lawyer, doctor, or engineer of record.</li>
-          <li>They are not celebrity or copyrighted-character impersonators.</li>
-          <li>They are not one-line costume prompts.</li>
+          <li>They are not celebrity impersonators.</li>
+          <li>Do not combine two prompts.</li>
         </ul>
       </section>
     </main>`;
 
-writeFileSync(join(web, "guide.html"), page({ title: "Guide · Grokbot Personas", body: guideBody }));
+writeFileSync(
+  join(web, "guide.html"),
+  shell({ title: "How to use · Grokbot Personas", pathPrefix: "", nav: "guide", body: guideBody }),
+);
 
 mkdirSync(join(web, "p"), { recursive: true });
 
-const copyScript = `<script>
+const copyPageScript = (id) => `<script>
 function copyPrompt() {
   var el = document.getElementById("prompt");
   if (!el) return;
@@ -168,8 +205,8 @@ function copyPrompt() {
     setTimeout(function () { btn.textContent = "Copy system prompt"; }, 1400);
   });
 }
-function copyId(id) {
-  navigator.clipboard.writeText(id);
+function copyId() {
+  navigator.clipboard.writeText(${jsStr(id)});
 }
 </script>`;
 
@@ -181,28 +218,26 @@ for (const persona of personas) {
   const avoid = (persona.anti_use_cases || []).map((x) => `<li>${esc(x)}</li>`).join("");
   const examples = (persona.example_interactions || [])
     .map(
-      (ex) => `<article class="ex"><h3>${esc(ex.title)}</h3><p class="who">You</p><p>${esc(ex.user)}</p><p class="who">Them</p><p>${esc(ex.assistant)}</p></article>`,
+      (ex) =>
+        `<article class="ex"><h3>${esc(ex.title)}</h3><p class="who">You</p><p>${esc(ex.user)}</p><p class="who">Them</p><p>${esc(ex.assistant)}</p></article>`,
     )
     .join("");
   const relatedHtml = related.length
     ? `<section class="section"><h2>Related</h2><ul>${related
-        .map(
-          (r) =>
-            `<li><a href="${esc(r.id)}.html"><span>${esc(r.name)}</span></a>. ${esc(r.short_description)}</li>`,
-        )
+        .map((r) => `<li><a href="${esc(r.id)}.html">${esc(r.name)}</a>. ${esc(r.short_description)}</li>`)
         .join("")}</ul></section>`
     : "";
   const temp = persona.compatibility?.recommended_temperature ?? "";
   const notes = persona.compatibility?.notes ? ". " + esc(persona.compatibility.notes) : "";
 
-  const body = `<main class="wrap" style="max-width:48rem">
+  const body = `<main class="wrap">
       <a class="back" href="../index.html">Catalog</a>
       <p class="kicker">${esc(LABELS[persona.category] || persona.category)} / ${esc(persona.subcategory)}</p>
       <h1 class="name">${esc(persona.name)}</h1>
       <p class="desc">${esc(persona.description)}</p>
       <div class="actions">
         <button class="btn" type="button" id="copy-prompt" onclick="copyPrompt()">Copy system prompt</button>
-        <button class="btn ghost" type="button" onclick="copyId('${esc(persona.id)}')">Copy ID</button>
+        <button class="btn ghost" type="button" onclick="copyId()">Copy ID</button>
       </div>
       <p class="temp">Temperature ${esc(temp)}${notes}</p>
       <section class="section">
@@ -222,31 +257,76 @@ for (const persona of personas) {
       ${relatedHtml}
       <p class="temp">${esc(persona.id)} · ${esc(persona.version)} · ${esc(persona.license)}</p>
     </main>
-    ${copyScript}`;
+    ${copyPageScript(persona.id)}`;
 
-  const html = page({
-    title: `${persona.name} · Grokbot Personas`,
-    body,
-    extraHead: `<link rel="stylesheet" href="../styles.css" />
-    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />`,
-  }).replace(
-    '<link rel="stylesheet" href="styles.css" />',
-    '<link rel="stylesheet" href="../styles.css" />',
-  ).replace(
-    '<link rel="icon" href="favicon.svg" type="image/svg+xml" />',
-    '<link rel="icon" href="../favicon.svg" type="image/svg+xml" />',
-  ).replace(
-    '<a class="brand" href="index.html">',
-    '<a class="brand" href="../index.html">',
-  ).replace(
-    '<a href="index.html">Catalog</a>',
-    '<a href="../index.html">Catalog</a>',
-  ).replace(
-    '<a href="guide.html">Guide</a>',
-    '<a href="../guide.html">Guide</a>',
+  writeFileSync(
+    join(web, "p", `${persona.id}.html`),
+    shell({
+      title: `${persona.name} · Grokbot Personas`,
+      pathPrefix: "../",
+      nav: "catalog",
+      body,
+    }),
   );
-
-  writeFileSync(join(web, "p", `${persona.id}.html`), html);
 }
 
-console.log(`Wrote static catalog: index + ${personas.length} persona pages`);
+const deskPeople = personas.filter((p) => p.category === "business");
+const deskRows = deskPeople
+  .map(
+    (p) =>
+      `<article class="card">
+          <a href="p/${esc(p.id)}.html">
+            <span class="cat">${esc(p.subcategory.replace(/-/g, " "))}</span>
+            <h2>${esc(p.name)}</h2>
+            <p class="blurb">${esc(p.short_description)}</p>
+          </a>
+          <div class="card-actions">
+            <button type="button" class="copy" data-copy="${esc(p.id)}">Copy prompt</button>
+            <a class="open" href="p/${esc(p.id)}.html">Open</a>
+          </div>
+          <textarea hidden id="src-${esc(p.id)}">${esc(p.system_prompt)}</textarea>
+        </article>`,
+  )
+  .join("\n        ");
+
+const deskBody = `<main class="wrap">
+      <section class="hero">
+        <h1>The desk</h1>
+        <p class="lede">Sixteen operators. One company. Do not paste all sixteen into one chat. Open Tess Rowan first. She will send you to the next seat.</p>
+      </section>
+      <section class="section">
+        <h2>How to run them</h2>
+        <ul>
+          <li>One prompt at a time. Tess routes. The specialist writes the artifact.</li>
+          <li>Sales week: Tess, then Boone, then Nyla, then Jude.</li>
+          <li>Money week: Lev, then Pax, then Enid.</li>
+          <li>Hiring week: Lev (can you pay), then Yara, then Rook for the drill.</li>
+          <li>Queue week: Noor, then Sable, then Oren, then Kit if the paste is daily.</li>
+        </ul>
+      </section>
+      <div class="grid" style="margin-top:2rem">
+        ${deskRows}
+      </div>
+    </main>
+    <script>
+    document.addEventListener("click", function (e) {
+      var btn = e.target.closest("[data-copy]");
+      if (!btn) return;
+      var id = btn.getAttribute("data-copy");
+      var src = document.getElementById("src-" + id);
+      if (!src) return;
+      navigator.clipboard.writeText(src.value).then(function () {
+        btn.textContent = "Copied";
+        setTimeout(function () { btn.textContent = "Copy prompt"; }, 1400);
+      });
+    });
+    </script>`;
+
+writeFileSync(
+  join(web, "desk.html"),
+  shell({ title: "The desk · Grokbot Personas", pathPrefix: "", nav: "desk", body: deskBody }),
+);
+
+writeFileSync(join(web, "404.html"), readFileSync(join(web, "index.html")));
+console.log(`Wrote static catalog: index + desk + ${personas.length} persona pages`);
+

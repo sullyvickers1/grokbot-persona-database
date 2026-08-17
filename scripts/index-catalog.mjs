@@ -12,6 +12,7 @@ const categories = [
   "personality",
   "specialized",
   "experimental",
+  "business",
 ];
 
 const personas = [];

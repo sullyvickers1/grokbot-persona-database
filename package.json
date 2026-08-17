@@ -1,7 +1,7 @@
 {
   "name": "grokbot-persona-database",
-  "version": "1.1.0",
-  "description": "Sixty system prompts for Grok and other models, with a browser catalog.",
+  "version": "1.2.0",
+  "description": "System prompts for Grok, including a desk of business operators.",
   "license": "MIT",
   "type": "module",
   "scripts": {

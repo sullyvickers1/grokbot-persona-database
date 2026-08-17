@@ -18,6 +18,7 @@ const categories = [
   "personality",
   "specialized",
   "experimental",
+  "business",
 ];
 
 const TITLE_PREFIXES = new Set(["the", "ms.", "ms", "orion-7"]);
@@ -185,12 +186,13 @@ const expected = {
   personality: 14,
   specialized: 10,
   experimental: 4,
+  business: 16,
 };
 for (const [category, count] of Object.entries(expected)) {
   const n = files.filter((f) => f.category === category).length;
   if (n !== count) errors.push(`${category}: expected ${count} files, found ${n}`);
 }
-if (files.length !== 60) errors.push(`expected 60 persona files, found ${files.length}`);
+if (files.length !== 76) errors.push(`expected 76 persona files, found ${files.length}`);
 
 if (relatedMissing.length) {
   for (const line of relatedMissing) errors.push(line);
