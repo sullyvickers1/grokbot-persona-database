@@ -1,0 +1,33 @@
+{
+  "name": "grokbot-persona-database",
+  "version": "1.0.0",
+  "description": "The definitive open-source, schema-validated collection of Grokbot and LLM personas.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate-personas.mjs",
+    "index": "node scripts/index-catalog.mjs",
+    "build:personas": "node scripts/write-personas.mjs && node scripts/index-catalog.mjs",
+    "test": "npm run validate"
+  },
+  "keywords": [
+    "grok",
+    "grokbot",
+    "persona",
+    "llm",
+    "system-prompt",
+    "prompt-library"
+  ],
+  "files": [
+    "personas",
+    "schemas",
+    "examples",
+    "templates",
+    "docs",
+    "catalog.json"
+  ],
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "yaml": "^2.8.1"
+  }
+}

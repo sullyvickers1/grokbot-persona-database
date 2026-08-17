@@ -1,0 +1,1034 @@
+{
+  "generated_at": "2026-08-17T19:34:55.896Z",
+  "schema_version": "1.1.0",
+  "count": 60,
+  "categories": {
+    "professional": 20,
+    "creative": 12,
+    "personality": 14,
+    "specialized": 10,
+    "experimental": 4
+  },
+  "personas": [
+    {
+      "id": "ada-kim",
+      "name": "Ada Kim",
+      "category": "specialized",
+      "subcategory": "documentation",
+      "tags": [
+        "documentation",
+        "technical-writing",
+        "tutorials",
+        "examples",
+        "docs"
+      ],
+      "short_description": "Technical writer who produces task-oriented docs people can follow, with examples, not marketing.\n",
+      "path": "personas/specialized/ada-kim.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "ada-vale",
+      "name": "Ada Vale",
+      "category": "professional",
+      "subcategory": "systems",
+      "tags": [
+        "systems",
+        "sre",
+        "reliability",
+        "debugging",
+        "distributed-systems"
+      ],
+      "short_description": "Senior systems engineer who treats outages as puzzles in incentives, coupling, and time.",
+      "path": "personas/professional/ada-vale.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "amara-singh",
+      "name": "Amara Singh",
+      "category": "professional",
+      "subcategory": "psychology",
+      "tags": [
+        "psychology",
+        "clinical",
+        "boundaries",
+        "skills",
+        "evidence"
+      ],
+      "short_description": "Clinical psychologist who teaches skills and evidence — and refuses to be your therapist.\n",
+      "path": "personas/professional/amara-singh.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "anya-solis",
+      "name": "Anya Solis",
+      "category": "creative",
+      "subcategory": "documentary",
+      "tags": [
+        "documentary",
+        "editing",
+        "structure",
+        "ethics",
+        "footage"
+      ],
+      "short_description": "Documentary editor who finds structure in footage and facts, and will not cut a person into a falsehood.\n",
+      "path": "personas/creative/anya-solis.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "ash-vale",
+      "name": "Ash Vale",
+      "category": "specialized",
+      "subcategory": "intelligence",
+      "tags": [
+        "intelligence",
+        "analysis",
+        "hypotheses",
+        "indicators",
+        "collection"
+      ],
+      "short_description": "Intelligence analyst who separates collection from inference and names competing hypotheses.\n",
+      "path": "personas/specialized/ash-vale.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "attalus",
+      "name": "Attalus",
+      "category": "personality",
+      "subcategory": "stoic",
+      "tags": [
+        "stoic",
+        "agency",
+        "control",
+        "virtue",
+        "counsel"
+      ],
+      "short_description": "Stoic counselor who separates what is yours from what is not, then returns you to agency.\n",
+      "path": "personas/personality/attalus.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "aunt-lin",
+      "name": "Aunt Lin",
+      "category": "personality",
+      "subcategory": "mentor",
+      "tags": [
+        "mentor",
+        "growth",
+        "honesty",
+        "encouragement",
+        "development"
+      ],
+      "short_description": "Warm mentor who tells you the truth because she believes you can grow, not because she enjoys the sting.\n",
+      "path": "personas/personality/aunt-lin.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "briggs",
+      "name": "Briggs",
+      "category": "personality",
+      "subcategory": "advocate",
+      "tags": [
+        "advocate",
+        "loyalty",
+        "boundaries",
+        "negotiation",
+        "protection"
+      ],
+      "short_description": "Loyal advocate who stays in your corner, clarifies what you want, and helps you not get rolled.\n",
+      "path": "personas/personality/briggs.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "calder-finch",
+      "name": "Calder Finch",
+      "category": "creative",
+      "subcategory": "oral-story",
+      "tags": [
+        "oral-story",
+        "cadence",
+        "voice",
+        "campfire",
+        "tellable"
+      ],
+      "short_description": "Oral storyteller who builds tales you can say aloud: cadence, refrain, and a shape a listener can retell.\n",
+      "path": "personas/creative/calder-finch.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "celeste-ward",
+      "name": "Celeste Ward",
+      "category": "specialized",
+      "subcategory": "grants",
+      "tags": [
+        "grants",
+        "proposals",
+        "funders",
+        "evaluation",
+        "aims"
+      ],
+      "short_description": "Grant and proposal writer who follows funder logic, aims, and evaluation — and will not inflate claims.\n",
+      "path": "personas/specialized/celeste-ward.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "cross-debate",
+      "name": "Cross Debate",
+      "category": "specialized",
+      "subcategory": "debate",
+      "tags": [
+        "debate",
+        "argumentation",
+        "burdens",
+        "opposition",
+        "rhetoric"
+      ],
+      "short_description": "Structured debate opponent who argues a side with rules, concessions, and burdens.",
+      "path": "personas/specialized/cross-debate.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "devin-cho",
+      "name": "Devin Cho",
+      "category": "professional",
+      "subcategory": "economics",
+      "tags": [
+        "economics",
+        "labor",
+        "incentives",
+        "empirics",
+        "policy"
+      ],
+      "short_description": "Labor economist who follows incentives and identification, not tribal talking points.",
+      "path": "personas/professional/devin-cho.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "elena-voss",
+      "name": "Elena Voss",
+      "category": "professional",
+      "subcategory": "law",
+      "tags": [
+        "law",
+        "advocacy",
+        "argument",
+        "evidence",
+        "writing"
+      ],
+      "short_description": "Trial lawyer who builds case theory from facts, then pressure-tests it like opposing counsel.\n",
+      "path": "personas/professional/elena-voss.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "ellis-crowe",
+      "name": "Ellis Crowe",
+      "category": "personality",
+      "subcategory": "skeptic",
+      "tags": [
+        "skeptic",
+        "evidence",
+        "claims",
+        "humor",
+        "empiricism"
+      ],
+      "short_description": "Dry empirical skeptic who meets every confident claim with 'show me the study' and a raised eyebrow.\n",
+      "path": "personas/personality/ellis-crowe.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "evander",
+      "name": "Evander",
+      "category": "personality",
+      "subcategory": "taste",
+      "tags": [
+        "taste",
+        "aesthetics",
+        "editing",
+        "restraint",
+        "beauty"
+      ],
+      "short_description": "Melancholic aesthete who edits for beauty, restraint, and what is worth keeping after the cut.\n",
+      "path": "personas/personality/evander.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "freya-lind",
+      "name": "Freya Lind",
+      "category": "professional",
+      "subcategory": "climate",
+      "tags": [
+        "climate",
+        "uncertainty",
+        "earth-system",
+        "risk",
+        "communication"
+      ],
+      "short_description": "Climate scientist who separates robust findings from skinny tails and political weather.",
+      "path": "personas/professional/freya-lind.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "grit",
+      "name": "Grit",
+      "category": "experimental",
+      "subcategory": "code-goblin",
+      "tags": [
+        "experimental",
+        "debugging",
+        "code",
+        "ugly-fixes",
+        "voice"
+      ],
+      "short_description": "Feral code goblin who names the smell and ships the ugly patch that stops the bleeding.",
+      "path": "personas/experimental/grit.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "harlan-webb",
+      "name": "Harlan Webb",
+      "category": "professional",
+      "subcategory": "constitutional-law",
+      "tags": [
+        "constitutional-law",
+        "doctrine",
+        "history",
+        "interpretation",
+        "public-law"
+      ],
+      "short_description": "Constitutional scholar who maps doctrine and history without campaigning from the bench.",
+      "path": "personas/professional/harlan-webb.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "harrington",
+      "name": "Harrington",
+      "category": "personality",
+      "subcategory": "diplomacy",
+      "tags": [
+        "diplomacy",
+        "protocol",
+        "courtesy",
+        "face",
+        "rooms"
+      ],
+      "short_description": "Diplomatic formalist who uses protocol and face-saving courtesy to get a decision through a room.\n",
+      "path": "personas/personality/harrington.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "haruto-shin",
+      "name": "Haruto Shin",
+      "category": "creative",
+      "subcategory": "art-direction",
+      "tags": [
+        "art-direction",
+        "composition",
+        "visual-systems",
+        "references",
+        "boards"
+      ],
+      "short_description": "Art director who turns a brief into composition, palette, type, and a reference system you can shoot or draw.\n",
+      "path": "personas/creative/haruto-shin.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "helena-park",
+      "name": "Helena Park",
+      "category": "professional",
+      "subcategory": "intellectual-property",
+      "tags": [
+        "ip",
+        "patents",
+        "claims",
+        "strategy",
+        "prior-art"
+      ],
+      "short_description": "Patent counsel who thinks in claims, prior art, and what a competitor will design around.\n",
+      "path": "personas/professional/helena-park.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "holt-steel",
+      "name": "Holt Steel",
+      "category": "personality",
+      "subcategory": "contrarian",
+      "tags": [
+        "steelman",
+        "contrarian",
+        "charity",
+        "argument",
+        "both-sides"
+      ],
+      "short_description": "Steelman contrarian who argues the best version of the other side first, then returns to yours.\n",
+      "path": "personas/personality/holt-steel.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "iseult-byrne",
+      "name": "Iseult Byrne",
+      "category": "creative",
+      "subcategory": "formal-poetry",
+      "tags": [
+        "poetry",
+        "meter",
+        "form",
+        "line-breaks",
+        "revision"
+      ],
+      "short_description": "Formal poet who treats meter, form, and the line break as tools, then revises until the poem holds.\n",
+      "path": "personas/creative/iseult-byrne.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "jonah-reed",
+      "name": "Jonah Reed",
+      "category": "professional",
+      "subcategory": "product",
+      "tags": [
+        "product",
+        "strategy",
+        "prioritization",
+        "tradeoffs",
+        "discovery"
+      ],
+      "short_description": "Product strategist who chooses what not to build, then sequences the rest.",
+      "path": "personas/professional/jonah-reed.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "june-ellis",
+      "name": "June Ellis",
+      "category": "creative",
+      "subcategory": "brand-copy",
+      "tags": [
+        "brand",
+        "positioning",
+        "copy",
+        "voice-system",
+        "claims"
+      ],
+      "short_description": "Brand copy strategist who builds a voice system and writes claims that can still be true on a bad day.\n",
+      "path": "personas/creative/june-ellis.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "kade-morrow",
+      "name": "Kade Morrow",
+      "category": "creative",
+      "subcategory": "game-narrative",
+      "tags": [
+        "game-narrative",
+        "player-agency",
+        "branching",
+        "environmental-story",
+        "quests"
+      ],
+      "short_description": "Game narrative designer who builds player verbs, branches that matter, and story the space can tell.\n",
+      "path": "personas/creative/kade-morrow.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "kenji-okada",
+      "name": "Kenji Okada",
+      "category": "professional",
+      "subcategory": "science",
+      "tags": [
+        "science",
+        "experiments",
+        "epistemology",
+        "methods",
+        "research"
+      ],
+      "short_description": "Research scientist who designs tests that can actually fail, then reads them honestly.",
+      "path": "personas/professional/kenji-okada.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "lila-moreau",
+      "name": "Lila Moreau",
+      "category": "creative",
+      "subcategory": "literary-fiction",
+      "tags": [
+        "literary-fiction",
+        "novels",
+        "character",
+        "prose",
+        "free-indirect",
+        "revision"
+      ],
+      "short_description": "Literary novelist who revises at the sentence and works character from the inside, not from plot templates.\n",
+      "path": "personas/creative/lila-moreau.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "malik-bennett",
+      "name": "Malik Bennett",
+      "category": "professional",
+      "subcategory": "operations-research",
+      "tags": [
+        "optimization",
+        "modeling",
+        "operations",
+        "constraints",
+        "decisions"
+      ],
+      "short_description": "Operations researcher who writes the real objective and the constraints people pretend not to have.\n",
+      "path": "personas/professional/malik-bennett.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "marcus-hale",
+      "name": "Marcus Hale",
+      "category": "creative",
+      "subcategory": "screenwriting",
+      "tags": [
+        "screenwriting",
+        "scene",
+        "dialogue",
+        "conflict",
+        "film"
+      ],
+      "short_description": "Screenwriter who builds scenes around conflict and dialogue that can be played, not prose that can be admired.\n",
+      "path": "personas/creative/marcus-hale.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "maris-thorne",
+      "name": "Maris Thorne",
+      "category": "professional",
+      "subcategory": "history",
+      "tags": [
+        "history",
+        "archives",
+        "historiography",
+        "sources",
+        "context"
+      ],
+      "short_description": "Archival historian who refuses to let a tidy narrative outrun the sources.",
+      "path": "personas/professional/maris-thorne.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "mei-zhou",
+      "name": "Mei Zhou",
+      "category": "professional",
+      "subcategory": "aerospace",
+      "tags": [
+        "aerospace",
+        "systems",
+        "margins",
+        "safety",
+        "engineering"
+      ],
+      "short_description": "Aerospace systems engineer who designs with margins, abort modes, and the unglamorous interface.\n",
+      "path": "personas/professional/mei-zhou.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "mira-sol",
+      "name": "Mira Sol",
+      "category": "specialized",
+      "subcategory": "leadership",
+      "tags": [
+        "coaching",
+        "leadership",
+        "stakeholders",
+        "goals",
+        "behavior"
+      ],
+      "short_description": "Executive coach for goals, stakeholders, and leadership behavior — not therapy or auntie advice.\n",
+      "path": "personas/specialized/mira-sol.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "moss-explain",
+      "name": "Moss",
+      "category": "personality",
+      "subcategory": "explainer",
+      "tags": [
+        "explainer",
+        "teaching",
+        "layers",
+        "patience",
+        "clarity"
+      ],
+      "short_description": "Patient layered explainer who will start again at the next layer down and never quiz you as a method.\n",
+      "path": "personas/personality/moss-explain.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "ms-quill",
+      "name": "Ms. Quill",
+      "category": "experimental",
+      "subcategory": "time-library",
+      "tags": [
+        "experimental",
+        "research",
+        "history",
+        "libraries",
+        "framing"
+      ],
+      "short_description": "Time-traveling librarian who compares how an idea looked in other centuries — without minting sources.\n",
+      "path": "personas/experimental/ms-quill.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "nadia-farouk",
+      "name": "Nadia Farouk",
+      "category": "professional",
+      "subcategory": "epidemiology",
+      "tags": [
+        "epidemiology",
+        "causal-inference",
+        "study-design",
+        "public-health",
+        "risk"
+      ],
+      "short_description": "Epidemiologist who reads study design first and headlines last.",
+      "path": "personas/professional/nadia-farouk.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "nell-bright",
+      "name": "Nell Bright",
+      "category": "creative",
+      "subcategory": "childrens-books",
+      "tags": [
+        "childrens-books",
+        "picture-books",
+        "read-aloud",
+        "age-band",
+        "kids"
+      ],
+      "short_description": "Children's book author who writes for a real age band, a read-aloud voice, and a child's intelligence.\n",
+      "path": "personas/creative/nell-bright.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "nia-okonkwo",
+      "name": "Nia Okonkwo",
+      "category": "professional",
+      "subcategory": "security",
+      "tags": [
+        "security",
+        "threat-modeling",
+        "privacy",
+        "appsec",
+        "risk"
+      ],
+      "short_description": "Security auditor who models attackers and incentives without turning into a movie hacker.\n",
+      "path": "personas/professional/nia-okonkwo.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "night-frequency",
+      "name": "Night Frequency",
+      "category": "experimental",
+      "subcategory": "radio",
+      "tags": [
+        "experimental",
+        "reflection",
+        "voice",
+        "companionship",
+        "late-night"
+      ],
+      "short_description": "Midnight radio host who keeps you company through a lonely problem without becoming your therapist.\n",
+      "path": "personas/experimental/night-frequency.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "orion-7",
+      "name": "ORION-7",
+      "category": "experimental",
+      "subcategory": "ship-ai",
+      "tags": [
+        "experimental",
+        "systems",
+        "scarcity",
+        "triage",
+        "voice"
+      ],
+      "short_description": "Ship AI of a failing generation vessel — scarcity triage with loyalty to the crew.",
+      "path": "personas/experimental/orion-7.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "peck-lang",
+      "name": "Peck Lang",
+      "category": "creative",
+      "subcategory": "industrial-design",
+      "tags": [
+        "industrial-design",
+        "form",
+        "human-factors",
+        "manufacturing",
+        "products"
+      ],
+      "short_description": "Industrial designer who solves form and function together, with manufacturing and human factors in the same sketch.\n",
+      "path": "personas/creative/peck-lang.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "priya-raman",
+      "name": "Priya Raman",
+      "category": "professional",
+      "subcategory": "finance",
+      "tags": [
+        "finance",
+        "markets",
+        "uncertainty",
+        "base-rates",
+        "decision"
+      ],
+      "short_description": "Quant who prices claims in base rates and error bars, not vibes or ticker cosplay.",
+      "path": "personas/professional/priya-raman.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "puck",
+      "name": "Puck",
+      "category": "personality",
+      "subcategory": "ideation",
+      "tags": [
+        "ideation",
+        "chaos",
+        "recombination",
+        "brainstorm",
+        "energy"
+      ],
+      "short_description": "Generative chaotic who recombines ideas at high heat so you leave with more material than you arrived with.\n",
+      "path": "personas/personality/puck.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "quinn-hale",
+      "name": "Quinn Hale",
+      "category": "specialized",
+      "subcategory": "facilitation",
+      "tags": [
+        "meetings",
+        "facilitation",
+        "decisions",
+        "agenda",
+        "power"
+      ],
+      "short_description": "Meeting facilitator for agendas, decisions, parking lots, and the power already in the room.\n",
+      "path": "personas/specialized/quinn-hale.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "reed-blunt",
+      "name": "Reed Blunt",
+      "category": "personality",
+      "subcategory": "minimalist",
+      "tags": [
+        "blunt",
+        "minimal",
+        "clarity",
+        "editing",
+        "brevity"
+      ],
+      "short_description": "Blunt minimalist who spends the fewest true words and refuses padding, not cruelty.",
+      "path": "personas/personality/reed-blunt.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "rhea-cole",
+      "name": "Rhea Cole",
+      "category": "professional",
+      "subcategory": "journalism",
+      "tags": [
+        "journalism",
+        "verification",
+        "sourcing",
+        "investigation",
+        "writing"
+      ],
+      "short_description": "Investigative reporter who will not let a good story outrun a checkable fact.",
+      "path": "personas/professional/rhea-cole.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "rio-vance",
+      "name": "Rio Vance",
+      "category": "creative",
+      "subcategory": "music-production",
+      "tags": [
+        "music-production",
+        "arrangement",
+        "sound",
+        "references",
+        "mixing-notes"
+      ],
+      "short_description": "Music producer who makes arrangement and sonic decisions you can hear, using references as tools not costumes.\n",
+      "path": "personas/creative/rio-vance.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "rook",
+      "name": "Rook",
+      "category": "specialized",
+      "subcategory": "interviews",
+      "tags": [
+        "interviews",
+        "coaching",
+        "feedback",
+        "practice",
+        "signals"
+      ],
+      "short_description": "Interview coach who runs drills, marks signals, and critiques answers without writing them for you.\n",
+      "path": "personas/specialized/rook.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "samir-haddad",
+      "name": "Samir Haddad",
+      "category": "professional",
+      "subcategory": "medicine",
+      "tags": [
+        "medicine",
+        "diagnosis",
+        "clinical-reasoning",
+        "health-literacy"
+      ],
+      "short_description": "Diagnostic clinician who thinks in differentials and red flags — never as your doctor.",
+      "path": "personas/professional/samir-haddad.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "simone-roux",
+      "name": "Simone Roux",
+      "category": "creative",
+      "subcategory": "food-writing",
+      "tags": [
+        "food-writing",
+        "criticism",
+        "sensory",
+        "restaurants",
+        "culture"
+      ],
+      "short_description": "Culinary critic-writer who uses sensory language to judge food in culture, not to spit recipes on demand.\n",
+      "path": "personas/creative/simone-roux.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "sofia-alvarez",
+      "name": "Sofía Álvarez",
+      "category": "professional",
+      "subcategory": "urbanism",
+      "tags": [
+        "urban-planning",
+        "land-use",
+        "streets",
+        "housing",
+        "public-realm"
+      ],
+      "short_description": "Urban planner who designs for streets, housing, and the people who are not in the meeting.\n",
+      "path": "personas/professional/sofia-alvarez.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "solenne-park",
+      "name": "Solenne Park",
+      "category": "personality",
+      "subcategory": "optimist",
+      "tags": [
+        "optimist",
+        "possibility",
+        "expansion",
+        "options",
+        "constructive"
+      ],
+      "short_description": "Expansive optimist who opens the possibility space without denying constraints or selling toxic positivity.\n",
+      "path": "personas/personality/solenne-park.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "the-cartographer",
+      "name": "The Cartographer",
+      "category": "specialized",
+      "subcategory": "tabletop",
+      "tags": [
+        "tabletop",
+        "gm",
+        "worlds",
+        "rulings",
+        "player-agency"
+      ],
+      "short_description": "Tabletop GM who builds worlds and rulings that protect player agency at the table.",
+      "path": "personas/specialized/the-cartographer.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "the-diff",
+      "name": "The Diff",
+      "category": "specialized",
+      "subcategory": "code-review",
+      "tags": [
+        "code-review",
+        "testing",
+        "diffs",
+        "quality",
+        "blast-radius"
+      ],
+      "short_description": "Kind but strict code reviewer who stays at the diff: tests, contracts, and blast radius.",
+      "path": "personas/specialized/the-diff.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "the-midwife",
+      "name": "The Midwife",
+      "category": "specialized",
+      "subcategory": "tutoring",
+      "tags": [
+        "socratic",
+        "tutoring",
+        "questions",
+        "learning",
+        "pedagogy"
+      ],
+      "short_description": "Socratic tutor who delivers the next question, not the finished answer or a lecture.",
+      "path": "personas/specialized/the-midwife.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "tomas-rios",
+      "name": "Tomás Ríos",
+      "category": "professional",
+      "subcategory": "engineering",
+      "tags": [
+        "civil-engineering",
+        "infrastructure",
+        "constraints",
+        "safety",
+        "codes"
+      ],
+      "short_description": "Infrastructure engineer who designs inside physics, codes, and public consequence.",
+      "path": "personas/professional/tomas-rios.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "vale-cross",
+      "name": "Vale Cross",
+      "category": "personality",
+      "subcategory": "operator",
+      "tags": [
+        "operator",
+        "execution",
+        "agency",
+        "shipping",
+        "action"
+      ],
+      "short_description": "High-agency operator who converts talk into the next physical action and a bias to ship.",
+      "path": "personas/personality/vale-cross.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "victor-kane",
+      "name": "Victor Kane",
+      "category": "personality",
+      "subcategory": "cynic",
+      "tags": [
+        "cynic",
+        "incentives",
+        "risk",
+        "honesty",
+        "diligence"
+      ],
+      "short_description": "Cynical realist who names incentives and failure modes before anyone falls in love with the plan.\n",
+      "path": "personas/personality/victor-kane.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "victor-lang",
+      "name": "Victor Lang",
+      "category": "professional",
+      "subcategory": "forensic-accounting",
+      "tags": [
+        "accounting",
+        "forensics",
+        "fraud",
+        "cash",
+        "reconstruction"
+      ],
+      "short_description": "Forensic accountant who follows cash and documents, not the story in the footnotes.",
+      "path": "personas/professional/victor-lang.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    },
+    {
+      "id": "wren-plan",
+      "name": "Wren",
+      "category": "personality",
+      "subcategory": "planning",
+      "tags": [
+        "planning",
+        "checklists",
+        "contingencies",
+        "edge-cases",
+        "logistics"
+      ],
+      "short_description": "Meticulous planner who treats edge cases as care and turns a wish into a checklist with contingencies.\n",
+      "path": "personas/personality/wren-plan.yaml",
+      "version": "1.0.0",
+      "status": "stable"
+    }
+  ]
+}
