@@ -12,11 +12,13 @@ const $app = document.getElementById("app");
 let personas = [];
 
 function escapeHtml(s) {
-  return String(s)
-    .replaceAll("&", "&")
-    .replaceAll("<", "<")
-    .replaceAll(">", ">")
-    .replaceAll('"', """);
+  return String(s).replace(/[&<>"']/g, function (ch) {
+    if (ch === "&") return "\u0026amp;";
+    if (ch === "<") return "\u0026lt;";
+    if (ch === ">") return "\u0026gt;";
+    if (ch === '"') return "\u0026quot;";
+    return "\u0026#39;";
+  });
 }
 
 function route() {
